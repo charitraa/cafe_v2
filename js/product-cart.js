@@ -214,7 +214,7 @@
       Notes: formData.get("notes") || "-",
       Order: orderLines,
       Total: formatPrice(cartTotal()),
-      _subject: `New Cafert Kathmandu order from ${formData.get("name")}`,
+      _subject: `New स्वादgasm order from ${formData.get("name")}`,
       _captcha: "false"
     };
 
