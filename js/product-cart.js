@@ -5,23 +5,22 @@
   const STORAGE_KEY = "cafertCart";
 
   const PRODUCTS = [
-    { id: "starter-momo", name: "Chicken Momo", price: 180, img: "img/index/menu01.jpg", desc: "Steamed dumplings, chicken filling, tomato achar." },
-    { id: "starter-chatamari", name: "Chatamari", price: 220, img: "img/index/menu02.jpg", desc: "Newari rice crepe, minced meat, egg topping." },
-    { id: "starter-sukuti", name: "Sukuti Sandheko", price: 250, img: "img/index/menu03.jpg", desc: "Dried buff jerky, mustard oil, chili, onion." },
-    { id: "starter-sekuwa", name: "Buff Sekuwa", price: 280, img: "img/index/menu04.jpg", desc: "Skewered buffalo meat, Himalayan spices, grilled." },
-    { id: "breakfast-selroti", name: "Sel Roti with Aloo Achar", price: 150, img: "img/index/menu05.jpg", desc: "Traditional rice doughnut, spicy potato salad." },
-    { id: "breakfast-thukpa", name: "Thukpa", price: 220, img: "img/index/menu06.jpg", desc: "Tibetan noodle soup, vegetables, choice of meat." },
-    { id: "breakfast-dhindo", name: "Dhindo Set", price: 240, img: "img/index/menu07.jpg", desc: "Buckwheat dhindo, gundruk soup, seasonal saag." },
-    { id: "breakfast-khaja", name: "Newari Khaja Set", price: 350, img: "img/index/menu08.jpg", desc: "Beaten rice, choila, bara, egg, achar." },
-    { id: "dessert-jujudhau", name: "Juju Dhau", price: 150, img: "img/index/menu09.jpg", desc: "Bhaktapur's famous king curd, caramelized sugar." },
-    { id: "dessert-kheer", name: "Kheer", price: 130, img: "img/index/menu10.jpg", desc: "Himalayan rice pudding, cardamom, cashew." },
-    { id: "dessert-sikarni", name: "Sikarni", price: 150, img: "img/index/menu11.jpg", desc: "Whipped yogurt, saffron, roasted nuts." },
-    { id: "dessert-lakhamari", name: "Lakhamari", price: 110, img: "img/index/menu12.jpg", desc: "Newari deep-fried sweet bread." },
-    { id: "drink-chiya", name: "Masala Chiya", price: 80, img: "img/index/menu13.jpg", desc: "Spiced Himalayan milk tea." },
-    { id: "drink-coffee", name: "Gorkha Black Coffee", price: 120, img: "img/index/menu14.jpg", desc: "Locally roasted Illam coffee beans." },
-    { id: "drink-tongba", name: "Tongba", price: 200, img: "img/index/menu15.jpg", desc: "Hot fermented millet brew, Himalayan tradition." },
-    { id: "drink-lassi", name: "Sweet Lassi", price: 150, img: "img/index/menu16.jpg", desc: "Chilled yogurt drink, cardamom." }
+    { id: "dryfruit-cashew", name: "Premium Kaju (Cashews)", price: 850, img: "img/index/dryfruit-cashew.jpg", desc: "Whole roasted cashews, lightly salted, 250g pack.", category: "Nuts" },
+    { id: "dryfruit-almond", name: "California Almonds", price: 480, img: "img/index/dryfruit-almond.jpg", desc: "Crunchy raw almonds, rich in protein, 250g pack.", category: "Nuts" },
+    { id: "dryfruit-walnut", name: "Kashmiri Walnuts", price: 560, img: "img/index/dryfruit-walnut.jpg", desc: "Fresh shelled walnut halves, buttery and rich, 250g pack.", category: "Nuts" },
+    { id: "dryfruit-pistachio", name: "Roasted Pistachios", price: 980, img: "img/index/dryfruit-pistachio.jpg", desc: "Lightly salted roasted pistachios, 250g pack.", category: "Nuts" },
+    { id: "dryfruit-peanut", name: "Roasted Peanuts", price: 180, img: "img/index/dryfruit-peanut.jpg", desc: "Crunchy masala-roasted peanuts, 250g pack.", category: "Nuts" },
+    { id: "dryfruit-raisin", name: "Golden Raisins (Kismis)", price: 220, img: "img/index/dryfruit-raisin.jpg", desc: "Sweet seedless golden raisins, 250g pack.", category: "Dried Fruits" },
+    { id: "dryfruit-apricot", name: "Dried Apricots", price: 320, img: "img/index/dryfruit-apricot.jpg", desc: "Sun-dried apricots, naturally sweet and tangy, 250g pack.", category: "Dried Fruits" },
+    { id: "dryfruit-fig", name: "Dried Figs (Anjeer)", price: 420, img: "img/index/dryfruit-fig.jpg", desc: "Soft dried figs, rich in fiber, 250g pack.", category: "Dried Fruits" },
+    { id: "dryfruit-date", name: "Premium Dates (Khajur)", price: 280, img: "img/index/dryfruit-date.jpg", desc: "Soft, naturally sweet dried dates, 250g pack.", category: "Dried Fruits" },
+    { id: "dryfruit-mulberry", name: "Dried Mulberries", price: 350, img: "img/index/dryfruit-mulberry.jpg", desc: "Naturally sweet dried mulberries, 200g pack.", category: "Dried Fruits" },
+    { id: "dryfruit-trailmix", name: "Himalayan Trail Mix", price: 380, img: "img/index/dryfruit-trailmix.jpg", desc: "Almonds, cashews, raisins and dried berries blended together, 300g pack.", category: "Mixes & Trail" },
+    { id: "dryfruit-berrynut", name: "Berry & Nut Mix", price: 340, img: "img/index/dryfruit-berrynut.jpg", desc: "Cranberries, pistachios, walnuts and almonds, 250g pack.", category: "Mixes & Trail" },
+    { id: "dryfruit-pumpkinseed", name: "Roasted Pumpkin Seeds", price: 260, img: "img/index/dryfruit-pumpkinseed.jpg", desc: "Crunchy roasted pumpkin seeds, rich in minerals, 200g pack.", category: "Seeds & Extras" }
   ];
+
+  const CATEGORIES = ["All", "Nuts", "Dried Fruits", "Mixes & Trail", "Seeds & Extras"];
 
   const productById = Object.fromEntries(PRODUCTS.map((p) => [p.id, p]));
 
@@ -48,8 +47,11 @@
   const cartTotal = () => cartEntries().reduce((sum, item) => sum + item.price * item.qty, 0);
   const cartCount = () => cartEntries().reduce((sum, item) => sum + item.qty, 0);
 
+  let activeCategory = "All";
+
   // Elements
   const productGrid = document.getElementById("productGrid");
+  const productFilters = document.getElementById("productFilters");
   const cartTrigger = document.getElementById("cartTrigger");
   const cartCountEl = document.getElementById("cartCount");
   const cartOverlay = document.getElementById("cartOverlay");
@@ -69,10 +71,18 @@
   const checkoutStatus = document.getElementById("checkoutStatus");
   const checkoutSubmit = document.getElementById("checkoutSubmit");
 
+  function renderFilters() {
+    productFilters.innerHTML = CATEGORIES.map((cat) => `
+      <button type="button" class="product_filter${cat === activeCategory ? " is-active" : ""}" data-category="${cat}">${cat}</button>
+    `).join("");
+  }
+
   function renderProducts() {
-    productGrid.innerHTML = PRODUCTS.map((p) => `
-      <div class="product_card">
-        <div class="product_card-media"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+    const items = activeCategory === "All" ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCategory);
+    productGrid.innerHTML = items.map((p, i) => `
+      <div class="product_card" style="animation-delay:${(i % 8) * 0.06}s">
+        <span class="product_card-tag">${p.category}</span>
+        <div class="product_card-media"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="product_card-body">
           <div class="product_card-name">${p.name}</div>
           <p class="product_card-desc">${p.desc}</p>
@@ -131,6 +141,9 @@
         btn.classList.remove("is-added");
       }, 900);
     }
+    cartTrigger.classList.remove("is-bumping");
+    void cartTrigger.offsetWidth;
+    cartTrigger.classList.add("is-bumping");
   }
 
   function changeQty(id, delta) {
@@ -253,8 +266,17 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    renderFilters();
     renderProducts();
     renderCart();
+
+    productFilters.addEventListener("click", (e) => {
+      const btn = e.target.closest(".product_filter");
+      if (!btn) return;
+      activeCategory = btn.dataset.category;
+      renderFilters();
+      renderProducts();
+    });
 
     productGrid.addEventListener("click", (e) => {
       const btn = e.target.closest(".product_card-add");

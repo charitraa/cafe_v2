@@ -65,7 +65,9 @@
   <script id=www-widgetapi-script src=https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js
     async=""></script>
   <script src=https://www.youtube.com/player_api></script>
-  <link rel="stylesheet preload" as=style href="css/preload.min.css">
+  <link rel=preconnect href="https://fonts.googleapis.com">
+  <link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel=stylesheet>
   <link rel="stylesheet preload" as=style href="css/icomoon.css">
   <link rel="stylesheet preload" as=style href="css/libs.min.css">
   <link rel=stylesheet href="css/index.min.css">
@@ -76,7 +78,7 @@
   <header class=header data-page=home2 data-page-parent=home>
     <div class="container d-flex align-items-center justify-content-between flex-wrap flex-xl-nowrap"><a class="logo h3"
         href="index.html"><span class=logo_img><img src="img/logo.png" alt="स्वादgasm logo" width="67" height="76"
-            style="width:67px;height:76px;object-fit:contain"></span>स्वादgasm </a><button class=header_trigger
+            style="width:67px;height:76px;object-fit:contain"></span> </a><button class=header_trigger
         id=headerTrigger data-bs-toggle=offcanvas data-bs-target=#offcanvasMenu aria-controls=offcanvasMenu
         type=button><span class=line></span> <span class=line></span> <span class="line line--short"></span></button>
     </div>
@@ -138,9 +140,10 @@
             </svg></span>
           <div class=section_header><span class=section_header-subtitle data-aos=fade-down>Private Events</span>
             <h1 class=section_header-title data-aos=fade-up>We Love What We Do</h1>
-            <p class="section_header-text text--medium" data-aos=fade-right>We pour our passion into every cup and
+            <p class="section_header-title text--medium" data-aos=fade-right >We pour our
+              passion into every cup and
               every plate, so each visit feels like coming home.</p>
-            <div class="wrapper d-flex">
+            <div class=" wrapper d-flex">
               <div data-aos=fade-up><a class=btn href="#menuTabs">View menu</a></div>
               <div data-aos=fade-up data-aos-delay=50><a class="btn btn--bordered" href="contacts.html">Reservations</a>
               </div>
@@ -208,7 +211,19 @@
             <div class=section_header><span class=section_header-subtitle data-aos=fade-down>About us</span>
               <h2 class=section_header-title data-aos=fade-up>Why Choose Us</h2>
               <p class="section_header-text text--md" data-aos=fade-left>We source the finest beans and roast them
-                in-house to bring you a warm, welcoming cafe experience every single day.</p>
+                in-house to bring you a warm, welcoming cafe experience every single day. From the first pour to the
+                last bite, every plate and cup is crafted by hand using recipes passed down through generations of
+                Kathmandu kitchens.</p>
+              <ul class=about_main-list data-aos=fade-up>
+                <li class=about_main-list_item><i class="icon-check about_main-list_icon"></i> Premium beans roasted
+                  fresh every week</li>
+                <li class=about_main-list_item><i class="icon-check about_main-list_icon"></i> Homemade pastries and
+                  Nepali snacks baked fresh every morning</li>
+                <li class=about_main-list_item><i class="icon-check about_main-list_icon"></i> Free Wi-Fi and a cozy,
+                  calm space to work, meet or relax</li>
+                <li class=about_main-list_item><i class="icon-check about_main-list_icon"></i> Easy pickup ordering
+                  through our online shop</li>
+              </ul>
               <div class=wrapper data-aos=fade-up><a class=btn href="contacts.html">About us</a></div>
             </div>
             <div class="about_main-wrapper_media d-none d-xl-block d-xxl-none">
@@ -231,221 +246,268 @@
     </section>
     <section class="menu section">
       <div class=container>
-        <div class="section_header centered"><span class=section_header-subtitle data-aos=fade-down>Our menu</span>
+        <div class="section_header centered"><span class=section_header-subtitle data-aos=fade-down>Naturally addictive</span>
           <h2 class=section_header-title data-aos=fade-up data-aos-delay=50>Special Menu</h2>
-          <p class=section_header-text data-aos=fade-up data-aos-delay=100>Every dish on our menu is made fresh
-            daily, using quality ingredients sourced from local farms.</p>
+          <p class=section_header-text data-aos=fade-up data-aos-delay=100>Fresh, hand-crafted dishes inspired by
+            Himalayan ingredients and Mediterranean simplicity.</p>
         </div>
         <div class=menu_main>
           <ul class="menu_nav nav nav-tabs d-flex flex-wrap justify-content-center" role=tablist>
             <li class="nav-item h4" role=presentation>
               <div class=nav-link id=starters-tab data-bs-toggle=tab data-bs-target=#starters role=tab
-                aria-selected=true>Starters</div>
+                aria-selected=true>Signature</div>
             </li>
             <li class="nav-item h4" role=presentation>
               <div class="nav-link active" id=breakfasts-tab data-bs-toggle=tab data-bs-target=#breakfasts role=tab
-                aria-selected=false>Breakfasts</div>
+                aria-selected=false>Breakfast Classics</div>
             </li>
             <li class="nav-item h4" role=presentation>
               <div class=nav-link id=desserts-tab data-bs-toggle=tab data-bs-target=#desserts role=tab
-                aria-selected=false>Desserts</div>
+                aria-selected=false>Bowls</div>
             </li>
             <li class="nav-item h4" role=presentation>
               <div class=nav-link id=beverages-tab data-bs-toggle=tab data-bs-target=#beverages role=tab
-                aria-selected=false>Beverages</div>
+                aria-selected=false>Wraps &amp; Paninis</div>
+            </li>
+            <li class="nav-item h4" role=presentation>
+              <div class=nav-link id=fire-tab data-bs-toggle=tab data-bs-target=#fire role=tab
+                aria-selected=false>From the Fire</div>
+            </li>
+            <li class="nav-item h4" role=presentation>
+              <div class=nav-link id=favourites-tab data-bs-toggle=tab data-bs-target=#favourites role=tab
+                aria-selected=false>Caf&eacute; Favourites</div>
             </li>
           </ul>
           <div class=tab-content id=menuTabs>
             <div class="menu_tab tab-pane fade active"><span class=menu_tab-trigger data-bs-toggle=collapse
-                data-bs-target=#starters aria-expanded=true role=button><span class="label h4">Starters</span> <i
+                data-bs-target=#starters aria-expanded=true role=button><span class="label h4">Signature</span> <i
                   class=icon></i></span>
               <ul class="menu_tab-list collapse show" id=starters>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Chicken Momo</a> <span class=main_price>Rs.
-                      180</span></div>
-                  <p class="description text--md">Steamed Dumplings, Chicken Filling, Tomato Achar</p>
+                  <div class="main h5"><a class=main_name href="index.html#">The Morning Ritual by Swadgasm &#9733;</a>
+                    <span class=main_price>Rs. 650</span></div>
+                  <p class="description text--md">A Thoughtfully Curated Breakfast Featuring Your Choice Of A
+                    Handcrafted Mini Wrap, A Fresh Market Fruit Selection, One Rotating Swadgasm Lab Signature Bite
+                    And Your Choice Of Specialty Coffee</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Paneer Tikka</a> <span class=main_price>Rs.
-                      220</span></div>
-                  <p class="description text--md">Grilled Cottage Cheese, Spiced Yogurt Marinade</p>
-                </li>
-                <li class=menu_tab-list_item data-type=spicy>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-spicy></i> Sukuti
-                      Sandheko</a>
-                    <span class=main_price>Rs. 250</span>
-                  </div>
-                  <p class="description text--md">Dried Buff Jerky, Mustard Oil, Chili, Onion</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Buff Sekuwa</a> <span class=main_price>Rs.
-                      280</span></div>
-                  <p class="description text--md">Skewered Buffalo Meat, Himalayan Spices, Grilled</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Chatamari</a> <span class=main_price>Rs.
-                      220</span></div>
-                  <p class="description text--md">Newari Rice Crepe, Minced Meat, Egg Topping</p>
-                </li>
-                <li class=menu_tab-list_item data-type=vegan>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-vegan></i> Bhatmas
-                      Sadeko</a> <span class=main_price>Rs. 100</span></div>
-                  <p class="description text--md">Roasted Soybeans, Lemon, Chili, Onion</p>
-                </li>
-                <li class=menu_tab-list_item data-type=vegan>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-vegan></i> Aloo
-                      Chop</a> <span class=main_price>Rs. 120</span></div>
-                  <p class="description text--md">Potato Croquettes, Mint Chutney</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Chicken Chhoila</a> <span
-                      class=main_price>Rs. 260</span></div>
-                  <p class="description text--md">Grilled Spiced Chicken, Beaten Rice, Mustard Oil</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Himalayan Harvest Plate &#9733;</a> <span
+                      class=main_price>Rs. 750</span></div>
+                  <p class="description text--md">Your Choice Of Grilled Chicken, Paneer Or Garlic Timur Prawns
+                    Served With Roasted Seasonal Vegetables, Creamy Hummus, House Herb Cream, Fresh Greens, Pickled
+                    Onions, Warm Artisan Sourdough And Our Signature Swadgasm Crunch</p>
                 </li>
               </ul>
             </div>
             <div class="menu_tab tab-pane fade"><span class=menu_tab-trigger data-bs-toggle=collapse
-                data-bs-target=#breakfasts aria-expanded=false role=button><span class="label h4">Breakfasts</span> <i
+                data-bs-target=#breakfasts aria-expanded=false role=button><span class="label h4">Breakfast Classics</span> <i
                   class=icon></i></span>
               <ul class="menu_tab-list collapse" id=breakfasts>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Sel Roti with Aloo Achar</a> <span
-                      class=main_price>Rs. 150</span></div>
-                  <p class="description text--md">traditional rice doughnut, spicy potato salad</p>
-                </li>
-                <li class=menu_tab-list_item data-type=spicy>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-spicy></i> Newari
-                      Khaja Set</a> <span class=main_price>Rs. 350</span></div>
-                  <p class="description text--md">beaten rice, choila, bara, egg, achar</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Eggs Benedict</a> <span
+                      class=main_price>Rs. 450</span></div>
+                  <p class="description text--md">Perfectly Poached Eggs On Toasted Artisan Sourdough With Silky
+                    House Hollandaise And Seasonal Greens. Choose Forest Mushroom &amp; Spinach, Smoked Salmon Or
+                    Crispy Bacon</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Thukpa</a> <span class=main_price>Rs.
-                      220</span></div>
-                  <p class="description text--md">Tibetan noodle soup, vegetables, choice of meat</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Toast &amp; Eggs Your Way</a> <span
+                      class=main_price>Rs. 350</span></div>
+                  <p class="description text--md">Fried, Scrambled, Poached Or Omelette Eggs Served With Toasted
+                    Artisan Sourdough And Seasonal Greens. Add Lab Boosts: House Herb Cream, Chicken Sausage,
+                    Crispy Bacon, Saut&eacute;ed Mushrooms, Roasted Tomato Or Smoked Salmon</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Dhindo Set</a> <span class=main_price>Rs.
-                      240</span></div>
-                  <p class="description text--md">buckwheat dhindo, gundruk soup, seasonal saag</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Half Fried Rice with Egg</a> <span
-                      class=main_price>Rs. 180</span></div>
-                  <p class="description text--md">vegetable fried rice, sunny side egg</p>
-                </li>
-                <li class=menu_tab-list_item data-type=spicy>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-spicy></i> Chiya
-                      Breakfast Set</a> <span class=main_price>Rs. 200</span></div>
-                  <p class="description text--md">masala chiya, roti, spicy egg curry</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Tibetan Bread with Butter Tea</a> <span
-                      class=main_price>Rs. 190</span></div>
-                  <p class="description text--md">deep fried bread, po cha butter tea</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Gurung Bread with Honey</a> <span
-                      class=main_price>Rs. 160</span></div>
-                  <p class="description text--md">fried Himalayan bread, wild honey</p>
+                  <div class="main h5"><a class=main_name href="index.html#">The Swadgasm Breakfast Board</a> <span
+                      class=main_price>Rs. 650</span></div>
+                  <p class="description text--md">Eggs Your Way, Chicken Sausage, Saut&eacute;ed Mushrooms, Roasted
+                    Tomato, Seasonal Fruit, Toasted Artisan Sourdough, House Herb Cream And Our Signature Swadgasm
+                    Crunch</p>
                 </li>
               </ul>
             </div>
             <div class="menu_tab tab-pane fade"><span class=menu_tab-trigger data-bs-toggle=collapse
-                data-bs-target=#desserts aria-expanded=false role=button><span class="label h4">Desserts</span> <i
+                data-bs-target=#desserts aria-expanded=false role=button><span class="label h4">Bowls</span> <i
                   class=icon></i></span>
               <ul class="menu_tab-list collapse" id=desserts>
-                <li class=menu_tab-list_item data-type=vegan>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-vegan></i> Juju
-                      Dhau</a> <span class=main_price>Rs. 150</span></div>
-                  <p class="description text--md">Bhaktapur's famous king curd, caramelized sugar</p>
-                </li>
-                <li class=menu_tab-list_item data-type=vegan>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-vegan></i> Kheer</a>
-                    <span class=main_price>Rs. 130</span>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Swadgasm Nourish Bowl &#9733;</a>
+                    <span class=main_price>Rs. 480</span>
                   </div>
-                  <p class="description text--md">Himalayan rice pudding, cardamom, cashew</p>
+                  <p class="description text--md">Quinoa Or Brown Rice Layered With Roasted Seasonal Vegetables,
+                    Crisp Greens, Pickled Onions, Swadgasm Crunch And Our Signature Herb Dressing. Finished With
+                    Your Choice Of Grilled Chicken, Paneer, Mushrooms Or Garlic Timur Prawns</p>
                 </li>
-                <li class=menu_tab-list_item data-type=vegan>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-vegan></i> Sikarni</a>
-                    <span class=main_price>Rs. 150</span>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Mango Sunrise Bowl</a>
+                    <span class=main_price>Rs. 380</span>
                   </div>
-                  <p class="description text--md">whipped yogurt, saffron, roasted nuts</p>
+                  <p class="description text--md">Creamy Greek Yogurt Blended With Ripe Mango And Banana, Topped
+                    With House Granola, Roasted Seeds And Vibrant Seasonal Fruits</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Lakhamari</a> <span class=main_price>Rs.
-                      110</span></div>
-                  <p class="description text--md">Newari deep-fried sweet bread</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Tropical Glow Bowl</a> <span
+                      class=main_price>Rs. 380</span></div>
+                  <p class="description text--md">A Refreshing Blend Of Spinach, Banana, Greek Yogurt And Coconut
+                    Milk, Finished With Seasonal Fruits, House Granola And Nutritious Seeds</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Malpa</a> <span class=main_price>Rs.
-                      120</span></div>
-                  <p class="description text--md">sweet fried pancake, sugar syrup</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Chia &amp; Flax Breakfast Bowl</a> <span
+                      class=main_price>Rs. 350</span></div>
+                  <p class="description text--md">Overnight-Soaked Chia And Flax Seeds In Creamy Coconut Milk,
+                    Finished With Roasted Nuts, Seasonal Fruits And A Hint Of Cinnamon</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Anarsa Roti</a> <span class=main_price>Rs.
-                      130</span></div>
-                  <p class="description text--md">rice flour sweet, sesame crust</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Sel Roti Dessert Platter</a> <span
-                      class=main_price>Rs. 140</span></div>
-                  <p class="description text--md">Sweet Rice Doughnuts, Honey Drizzle</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Chocolate Sel Roti</a> <span
-                      class=main_price>Rs. 160</span></div>
-                  <p class="description text--md">Sel Roti Dipped In Dark Chocolate</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Greek Yogurt &amp; House Granola
+                      Parfait</a> <span class=main_price>Rs. 320</span></div>
+                  <p class="description text--md">Layers Of Creamy Greek Yogurt, House-Made Granola, Berry Compote
+                    And Fresh Seasonal Fruits, Finished With A Delicate Drizzle Of Honey</p>
                 </li>
               </ul>
             </div>
             <div class="menu_tab tab-pane fade"><span class=menu_tab-trigger data-bs-toggle=collapse
-                data-bs-target=#beverages aria-expanded=false role=button><span class="label h4">Beverages</span> <i
+                data-bs-target=#beverages aria-expanded=false role=button><span class="label h4">Wraps &amp; Paninis</span> <i
                   class=icon></i></span>
               <ul class="menu_tab-list collapse" id=beverages>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Masala Chiya</a> <span class=main_price>Rs.
-                      80</span></div>
-                  <p class="description text--md">Spiced Himalayan Milk Tea</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Grilled Chicken Protein Wrap</a> <span
+                      class=main_price>Rs. 420</span></div>
+                  <p class="description text--md">Tender Grilled Chicken Wrapped With Creamy Hummus, Crisp Greens,
+                    Cucumber, Pickled Onions And House Herb Cream In A Soft Tortilla</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Gorkha Black Coffee</a> <span
-                      class=main_price>Rs. 120</span></div>
-                  <p class="description text--md">Locally Roasted Illam Coffee Beans</p>
-                </li>
-                <li class=menu_tab-list_item data-type=spicy>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-spicy></i> Tongba</a>
-                    <span class=main_price>Rs. 200</span>
-                  </div>
-                  <p class="description text--md">Hot Fermented Millet Brew, Himalayan Tradition</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Mediterranean Paneer Wrap</a> <span
+                      class=main_price>Rs. 380</span></div>
+                  <p class="description text--md">Grilled Paneer Layered With Roasted Vegetables, Creamy Hummus,
+                    Fresh Greens And House Herb Cream, Wrapped In A Warm Tortilla</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Rakshi Sour</a> <span class=main_price>Rs.
-                      220</span></div>
-                  <p class="description text--md">Traditional Nepali Rice Spirit, Lime, Honey</p>
-                </li>
-                <li class=menu_tab-list_item data-type=vegan>
-                  <div class="main h5"><a class=main_name href="index.html#"><i class=icon-vegan></i> Sweet Lassi</a>
-                    <span class=main_price>Rs. 150</span>
-                  </div>
-                  <p class="description text--md">Chilled Yogurt Drink, Cardamom</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Smoked Chicken Panini</a> <span
+                      class=main_price>Rs. 420</span></div>
+                  <p class="description text--md">Slow-Smoked Chicken, Mozzarella, Caramelised Onions And Garlic
+                    Aioli Pressed In Artisan Bread Until Perfectly Crisp And Golden</p>
                 </li>
                 <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Lapsi Cooler</a> <span class=main_price>Rs.
-                      140</span></div>
-                  <p class="description text--md">Nepali Hog Plum, Mint, Soda</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Himalayan Herbal Tea</a> <span
-                      class=main_price>Rs. 100</span></div>
-                  <p class="description text--md">Ginger, Tulsi, Lemongrass Infusion</p>
-                </li>
-                <li class=menu_tab-list_item>
-                  <div class="main h5"><a class=main_name href="index.html#">Chhyang</a> <span class=main_price>Rs.
-                      180</span></div>
-                  <p class="description text--md">Traditional Fermented Rice Beer</p>
+                  <div class="main h5"><a class=main_name href="index.html#">Garden Harvest Panini</a> <span
+                      class=main_price>Rs. 360</span></div>
+                  <p class="description text--md">Roasted Seasonal Vegetables, Basil Pesto, Mozzarella And Fresh
+                    Spinach Pressed In Artisan Bread Until Golden, Crisp And Finished With Fragrant Herbs</p>
                 </li>
               </ul>
             </div>
+            <div class="menu_tab tab-pane fade"><span class=menu_tab-trigger data-bs-toggle=collapse
+                data-bs-target=#fire aria-expanded=false role=button><span class="label h4">From the Fire</span> <i
+                  class=icon></i></span>
+              <ul class="menu_tab-list collapse" id=fire>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Smoked Paneer Grill</a> <span
+                      class=main_price>Rs. 480</span></div>
+                  <p class="description text--md">Tender Paneer Marinated In Smoky Spices, Flame Grilled To
+                    Perfection And Served With Cooling Mint Yogurt And House Pickled Onions</p>
+                </li>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Ember Chicken</a> <span
+                      class=main_price>Rs. 550</span></div>
+                  <p class="description text--md">Juicy Chicken Marinated In Aromatic Spices, Flame Grilled Over
+                    Open Fire And Served With Our House Tomato&ndash;Timur Relish And Fresh Herbs</p>
+                </li>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Garlic Timur Prawns</a> <span
+                      class=main_price>Rs. 650</span></div>
+                  <p class="description text--md">Succulent Prawns Flame Grilled With Garlic Butter, Fragrant Timur
+                    And Fresh Lemon, Finished With Fresh Herbs For A Vibrant, Smoky Finish</p>
+                </li>
+              </ul>
+            </div>
+            <div class="menu_tab tab-pane fade"><span class=menu_tab-trigger data-bs-toggle=collapse
+                data-bs-target=#favourites aria-expanded=false role=button><span class="label h4">Caf&eacute;
+                  Favourites</span> <i class=icon></i></span>
+              <ul class="menu_tab-list collapse" id=favourites>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Garlic Saut&eacute;ed Mushroom Toast</a>
+                    <span class=main_price>Rs. 320</span></div>
+                  <p class="description text--md">Garlic Saut&eacute;ed Mushrooms Layered Over Toasted Artisan
+                    Sourdough With Whipped Feta, Shaved Parmesan And Fresh Herbs</p>
+                </li>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Charred Corn Chaat</a> <span
+                      class=main_price>Rs. 280</span></div>
+                  <p class="description text--md">Fire-Charred Sweet Corn Tossed With Roasted Peanuts, Cucumber,
+                    Pomegranate, Fresh Herbs And A Bright Signature House Dressing</p>
+                </li>
+                <li class=menu_tab-list_item>
+                  <div class="main h5"><a class=main_name href="index.html#">Timur Lime Roasted Broccoli</a> <span
+                      class=main_price>Rs. 300</span></div>
+                  <p class="description text--md">Oven-Roasted Broccoli Finished With Toasted Almonds, Parmesan And
+                    A Vibrant Timur-Lime Butter</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="specials section">
+      <div class=container>
+        <div class="section_header centered"><span class=section_header-subtitle data-aos=fade-down>limited time</span>
+          <h2 class=section_header-title data-aos=fade-up data-aos-delay=50>Today's Specials</h2>
+          <p class=section_header-text data-aos=fade-up data-aos-delay=100>Combo deals at prices you'll love, available
+            all day.</p>
+        </div>
+        <div class=specials_grid>
+          <div class=specials_card data-aos=fade-up><span class=specials_card-badge>Save Rs. 50</span>
+            <div class=specials_card-media><img class=lazy data-src=img/index/menu06.jpg
+                src="img/index/menu06.jpg" alt="Benedict &amp; Brew"></div>
+            <div class=specials_card-body>
+              <h3 class=specials_card-title>Benedict &amp; Brew</h3>
+              <p class="specials_card-desc text text--md">Eggs Benedict + Your Choice Of Specialty Coffee</p>
+              <div class=specials_card-price><span class=specials_card-price_old>Rs. 600</span> <span>Rs. 550</span>
+              </div><a class="btn btn--bordered specials_card-btn" href="contacts.html">Visit Us</a>
+            </div>
+          </div>
+          <div class=specials_card data-aos=fade-up data-aos-delay=50><span class=specials_card-badge>Save Rs. 50</span>
+            <div class=specials_card-media><img class=lazy data-src=img/index/menu14.jpg
+                src="img/index/menu14.jpg" alt="Glow Bowl &amp; Juice"></div>
+            <div class=specials_card-body>
+              <h3 class=specials_card-title>Glow Bowl &amp; Juice</h3>
+              <p class="specials_card-desc text text--md">Tropical Glow Bowl + Fresh Market Juice</p>
+              <div class=specials_card-price><span class=specials_card-price_old>Rs. 530</span> <span>Rs. 480</span>
+              </div><a class="btn btn--bordered specials_card-btn" href="contacts.html">Visit Us</a>
+            </div>
+          </div>
+          <div class=specials_card data-aos=fade-up data-aos-delay=100><span class=specials_card-badge>Save Rs.
+              60</span>
+            <div class=specials_card-media><img class=lazy data-src=img/index/menu08.jpg
+                src="img/index/menu08.jpg" alt="Garden Toast &amp; Broccoli Combo"></div>
+            <div class=specials_card-body>
+              <h3 class=specials_card-title>Garden Toast &amp; Broccoli Combo</h3>
+              <p class="specials_card-desc text text--md">Garlic Saut&eacute;ed Mushroom Toast + Timur Lime Roasted
+                Broccoli</p>
+              <div class=specials_card-price><span class=specials_card-price_old>Rs. 620</span> <span>Rs. 560</span>
+              </div><a class="btn btn--bordered specials_card-btn" href="contacts.html">Visit Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="how-to-order section">
+      <div class=container>
+        <div class="section_header centered"><span class=section_header-subtitle data-aos=fade-down>simple &amp; fast</span>
+          <h2 class=section_header-title data-aos=fade-up>How to Order</h2>
+          <p class=section_header-text data-aos=fade-up data-aos-delay=50>From craving to cup in three easy steps.</p>
+        </div>
+        <div class=how-to-order_steps>
+          <div class=how-to-order_step data-aos=fade-up><span class=how-to-order_step-num>1</span>
+            <h3 class=how-to-order_step-title>Browse the Shop</h3>
+            <p class="text text--md">Explore our menu and add your favorite nuts and dried fruits to the cart.</p>
+          </div>
+          <div class=how-to-order_step data-aos=fade-up data-aos-delay=50><span class=how-to-order_step-num>2</span>
+            <h3 class=how-to-order_step-title>Checkout Online</h3>
+            <p class="text text--md">Review your cart and send your order through our quick checkout form.</p>
+          </div>
+          <div class=how-to-order_step data-aos=fade-up data-aos-delay=100><span class=how-to-order_step-num>3</span>
+            <h3 class=how-to-order_step-title>Pick Up &amp; Enjoy</h3>
+            <p class="text text--md">We confirm your order and have it ready for pickup at our Thamel cafe.</p>
           </div>
         </div>
       </div>
@@ -896,7 +958,7 @@
     <div class="container d-flex">
       <div class=footer_about><a class="logo h3" href="index.html"><span class=logo_img><img src="img/logo.png"
               alt="स्वादgasm logo" width="67" height="76"
-              style="width:67px;height:76px;object-fit:contain"></span>स्वादgasm</a>
+              style="width:67px;height:76px;object-fit:contain"></span></a>
         <div class=wrapper>
           <p class="footer_about-address text--sm text--bold">Thamel Marg, Kathmandu 44600, Nepal</p>
           <p class="footer_about-copyright text--sm">स्वादgasm &copy; Kathmandu All Rights Reserved <span
