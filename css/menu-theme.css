@@ -1,0 +1,349 @@
+/* Paper + gold-leaf menu theme, derived from the printed café menu */
+
+/* Home page "Special Menu" — gold leaf accents only, plain section background */
+
+.menu.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu.section::before,
+.menu.section::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  aspect-ratio: 420 / 1081;
+  background: url("../img/menu/leaf-gold-big.webp") center/contain no-repeat;
+  opacity: .85;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.menu.section::before {
+  top: -20px;
+  right: 20px;
+}
+
+.menu.section::after {
+  bottom: -20px;
+  left: 20px;
+  transform: scaleX(-1);
+}
+
+.menu.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-showcase_cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 991.98px) {
+  .menu.section::before,
+  .menu.section::after {
+    width: 130px;
+  }
+
+  .menu.section::before {
+    top: -20px;
+    right: -60px;
+  }
+
+  .menu.section::after {
+    bottom: -20px;
+    left: -60px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  /* not enough side margin on phones to keep the leaves clear of the text */
+  .menu.section::before,
+  .menu.section::after {
+    display: none;
+  }
+}
+
+/* Full-menu page (menu.html) — flat cream background, gold leaf accents only */
+
+.full-menu {
+  position: relative;
+  background: #fbf8f1;
+  overflow: hidden;
+}
+
+/* On wide screens the centered content leaves generous empty margins either
+   side — show the full leaf artwork there instead of the small clipped
+   corner accent used on the card itself. */
+@media screen and (min-width: 1700px) {
+  .full-menu::before,
+  .full-menu::after {
+    content: "";
+    position: absolute;
+    top: 480px;
+    width: 240px;
+    aspect-ratio: 420 / 1081;
+    background: url("../img/menu/leaf-gold-big.webp") center/contain no-repeat;
+    opacity: .9;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .full-menu::before {
+    left: 60px;
+  }
+
+  .full-menu::after {
+    right: 60px;
+    transform: scaleX(-1);
+  }
+
+  .menu-showcase::before,
+  .menu-showcase::after {
+    display: none;
+  }
+
+  .full-menu > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.full-menu .section_header-text {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-showcase {
+  position: relative;
+  padding: 60px 50px;
+  overflow: hidden;
+}
+
+.menu-showcase::before,
+.menu-showcase::after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  aspect-ratio: 420 / 1081;
+  background: url("../img/menu/leaf-gold-big.webp") center/contain no-repeat;
+  opacity: .85;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.menu-showcase::before {
+  top: -30px;
+  right: -30px;
+}
+
+.menu-showcase::after {
+  bottom: -30px;
+  left: -30px;
+  transform: scaleX(-1);
+}
+
+.menu-showcase > * {
+  position: relative;
+  z-index: 1;
+}
+
+.full-menu_count {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #af8125;
+}
+
+.full-menu_tabs {
+  gap: 10px 8px;
+  margin-top: 24px;
+}
+
+.full-menu_tabs .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: 1px solid rgba(175, 129, 37, .5);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: #2f3e2e;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.full-menu_tabs .nav-link span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #af8125;
+}
+
+.full-menu_tabs .nav-link:hover,
+.full-menu_tabs .nav-link[aria-selected=true] {
+  background: #2f3e2e;
+  border-color: #2f3e2e;
+  color: #fff;
+}
+
+.full-menu_tabs .nav-link:hover span,
+.full-menu_tabs .nav-link[aria-selected=true] span {
+  color: #d9b25c;
+}
+
+.full-menu_tabcontent {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.full-menu_note {
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+.menu-category_title {
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.menu-category_subtitle {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-top: -6px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  margin-top: 22px;
+}
+
+.menu-item_head {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.menu-item_name {
+  flex: 0 1 auto;
+  min-width: 0;
+  font-weight: 700;
+  color: #2f3e2e;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  font-size: 16px;
+}
+
+.menu-item_dots {
+  flex: 1 1 auto;
+  border-bottom: 1px dotted #af8125;
+  height: 0;
+  margin-bottom: 5px;
+  min-width: 12px;
+}
+
+.menu-item_price {
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: #af8125;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.menu-item_desc {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #5c5c5c;
+}
+
+.menu-variants {
+  margin-top: 10px;
+  padding-left: 14px;
+}
+
+.menu-variant {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.menu-variant_name {
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 13px;
+  color: #5c5c5c;
+}
+
+.menu-variant_dots {
+  flex: 1 1 auto;
+  border-bottom: 1px dotted rgba(175, 129, 37, .5);
+  height: 0;
+  margin-bottom: 4px;
+  min-width: 12px;
+}
+
+.menu-variant_price {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: #af8125;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767.98px) {
+  .full-menu .menu-showcase {
+    padding: 30px 20px;
+  }
+
+  .full-menu .menu-showcase::before,
+  .full-menu .menu-showcase::after {
+    width: 90px;
+  }
+
+  .full-menu .menu-showcase::before {
+    top: -30px;
+    right: -70px;
+  }
+
+  .full-menu .menu-showcase::after {
+    bottom: -30px;
+    left: -70px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .menu-item_name,
+  .menu-item_price {
+    font-size: 14px;
+  }
+
+  .full-menu_tabs {
+    gap: 8px 6px;
+  }
+
+  .full-menu_tabs .nav-link {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  /* not enough side margin on phones to keep the leaves clear of the text */
+  .full-menu .menu-showcase::before,
+  .full-menu .menu-showcase::after {
+    display: none;
+  }
+}
