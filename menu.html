@@ -93,64 +93,70 @@
 
         <p class=full-menu_count>53 dishes &amp; drinks across 15 categories</p>
 
+        <div class=full-menu_chapters role=tablist aria-label="Menu chapter">
+          <button type=button class="full-menu_chapter active" data-chapter=drinks aria-selected=true>Drinks &amp;
+            Coffee <span>33</span></button>
+          <button type=button class=full-menu_chapter data-chapter=food aria-selected=false>Food <span>20</span></button>
+        </div>
+
         <ul class="full-menu_tabs nav nav-tabs d-flex flex-wrap justify-content-center" role=tablist>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=specialty-coffee-tab data-bs-toggle=tab data-bs-target=#specialty-coffee role=tab
               aria-selected=true>Specialty Coffee <span>11</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=hand-brewed-coffee-tab data-bs-toggle=tab data-bs-target=#hand-brewed-coffee role=tab
               aria-selected=false>Hand Brewed Coffee <span>1</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=iced-coffee-tab data-bs-toggle=tab data-bs-target=#iced-coffee role=tab
               aria-selected=false>Iced Coffee <span>4</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=from-the-lab-tab data-bs-toggle=tab data-bs-target=#from-the-lab role=tab
               aria-selected=false>From The Lab <span>6</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=lab-blends-tab data-bs-toggle=tab data-bs-target=#lab-blends role=tab
               aria-selected=false>Lab Blends <span>2</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=sparkling-refreshers-tab data-bs-toggle=tab data-bs-target=#sparkling-refreshers role=tab
               aria-selected=false>Sparkling Refreshers <span>2</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=signature-chocolate-tab data-bs-toggle=tab data-bs-target=#signature-chocolate role=tab
               aria-selected=false>Signature Chocolate <span>2</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=drinks>
             <div class=nav-link id=premium-tea-tab data-bs-toggle=tab data-bs-target=#premium-tea role=tab
               aria-selected=false>Premium Tea <span>5</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=food>
             <div class=nav-link id=all-day-ritual-tab data-bs-toggle=tab data-bs-target=#all-day-ritual role=tab
               aria-selected=false>All Day Ritual <span>1</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=food>
             <div class=nav-link id=breakfast-classics-tab data-bs-toggle=tab data-bs-target=#breakfast-classics role=tab
               aria-selected=false>Breakfast Classics <span>3</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=food>
             <div class=nav-link id=bowls-tab data-bs-toggle=tab data-bs-target=#bowls role=tab
               aria-selected=false>Bowls <span>5</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=food>
             <div class=nav-link id=wraps-paninis-tab data-bs-toggle=tab data-bs-target=#wraps-paninis role=tab
               aria-selected=false>Handcrafted Wraps &amp; Paninis <span>4</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=food>
             <div class=nav-link id=from-the-fire-tab data-bs-toggle=tab data-bs-target=#from-the-fire role=tab
               aria-selected=false>From The Fire <span>3</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=food>
             <div class=nav-link id=cafe-favourites-tab data-bs-toggle=tab data-bs-target=#cafe-favourites role=tab
               aria-selected=false>Café Favourites <span>3</span></div>
           </li>
-          <li class="nav-item h4" role=presentation>
+          <li class="nav-item h4" role=presentation data-chapter=food>
             <div class=nav-link id=signature-tab data-bs-toggle=tab data-bs-target=#signature role=tab
               aria-selected=false>Signature <span>1</span></div>
           </li>
@@ -499,6 +505,7 @@
     </div>
   </footer>
   <script src="js/common.min.js"></script>
+  <script src="js/menu-chapters.js"></script>
 </body>
 
 </html>
