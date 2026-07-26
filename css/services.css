@@ -1,0 +1,37 @@
+/* Services banner — supporting copy between the title and the Get a Quote button.
+   Breakpoints mirror .services_main-banner_title in index.min.css so the block
+   flips from centered to left-aligned with the rest of the banner. */
+
+.services_main-banner_tagline {
+  margin: 0 auto 8px;
+  max-width: 220px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2f3e2e;
+}
+
+.services_main-banner_meta {
+  margin: 0 auto 22px;
+  max-width: 220px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #5c5c5c;
+}
+
+@media screen and (min-width: 474.98px) {
+  .services_main-banner_tagline,
+  .services_main-banner_meta {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1199.98px) {
+  .services_main-banner_tagline,
+  .services_main-banner_meta {
+    max-width: 320px;
+  }
+}
