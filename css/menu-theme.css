@@ -213,6 +213,36 @@
   margin-top: 40px;
 }
 
+/* Each category opens on a photo of one of its own dishes, framed with the
+   same gold hairline the printed menu uses. */
+.menu-category_media {
+  margin: 0 0 26px;
+  aspect-ratio: 12 / 5;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid rgba(175, 129, 37, .45);
+  box-shadow: 0 12px 28px rgba(47, 62, 46, .13);
+}
+
+.menu-category_media picture {
+  display: block;
+  height: 100%;
+}
+
+.menu-category_media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 575.98px) {
+  .menu-category_media {
+    aspect-ratio: 3 / 2;
+    margin-bottom: 20px;
+  }
+}
+
 .menu-category_title {
   text-align: center;
   font-size: 24px;

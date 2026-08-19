@@ -35,3 +35,13 @@
     max-width: 320px;
   }
 }
+
+/* The banner copy is dark green on grey, so the photo behind it needs a cream
+   scrim to stay readable — otherwise the darker catering shots swallow it. */
+.services_main-banner_bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(251, 248, 241, .82), rgba(251, 248, 241, .64));
+  pointer-events: none;
+}

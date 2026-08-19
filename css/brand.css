@@ -1,0 +1,444 @@
+/* Brand content added with the "Swadgasm Lab & Wellness Café" rebrand:
+   the founder's note, the Why Choose Us grid, and the tweaks the new
+   four-up stats counter and footer contact block need on top of
+   index.min.css. */
+
+/* ---------------------------------------------------------------- founder */
+
+/* Sits directly below the hero at the client's request, so it opens on a
+   cream ground that separates it from the slider above without adding
+   another full-width photo. */
+.founder.section {
+  background: #fbf8f1;
+}
+
+.founder_grid {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+}
+
+@media screen and (min-width: 991.98px) {
+  .founder_grid {
+    grid-template-columns: minmax(280px, 380px) 1fr;
+    gap: 60px;
+  }
+
+  /* The note is long; the portrait rides along with it rather than
+     stranding a tall column of whitespace beside the closing paragraphs. */
+  .founder_media {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.founder_media picture {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 18px 40px rgba(47, 62, 46, .18);
+}
+
+.founder_media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 991.98px) {
+  .founder_media {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+.founder_media-caption {
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 2px solid #af8125;
+}
+
+.founder_media-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: #2f3e2e;
+}
+
+.founder_media-role {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #5c5c5c;
+}
+
+.founder_lead {
+  margin: 0 0 24px;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #2f3e2e;
+}
+
+@media screen and (min-width: 767.98px) {
+  .founder_lead {
+    font-size: 26px;
+  }
+}
+
+.founder_body p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #5c5c5c;
+}
+
+.founder_quote {
+  margin: 28px 0;
+  padding: 22px 26px;
+  border-left: 3px solid #af8125;
+  background: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2f3e2e;
+}
+
+.founder_creed {
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.founder_creed li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2f3e2e;
+}
+
+.founder_creed li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .65em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a3b18a;
+}
+
+.founder_sign {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px dashed rgba(175, 129, 37, .45);
+}
+
+.founder_sign-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2f3e2e;
+}
+
+.founder_sign-role {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #5c5c5c;
+}
+
+.founder_sign-tagline {
+  margin: 12px 0 0;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #af8125;
+}
+
+/* ----------------------------------------------------------------- banner */
+
+.banner_footnote {
+  margin: 20px 0 0;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .04em;
+  color: #af8125;
+}
+
+/* ------------------------------------------------------------------ about */
+
+.about_main-motto {
+  margin: 24px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2f3e2e;
+}
+
+/* index.min.css sizes .counter_block at calc(100% / 3) for the three
+   business figures this section used to carry. The brand figures run to
+   four, so the row becomes a wrapping grid instead. */
+.counter {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 575.98px) {
+  .counter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1199.98px) {
+  .counter {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.counter_block.num {
+  width: auto;
+}
+
+/* The alternating green fills in index.min.css are keyed to three blocks;
+   with four, colour them as a checkerboard so no two neighbours match. */
+.counter_block:nth-of-type(odd) {
+  background: #a3b18a;
+}
+
+.counter_block:nth-of-type(even) {
+  background: #2f3e2e;
+}
+
+.counter_block.num .countNum {
+  height: auto;
+}
+
+.counter_block.num span:not(.countNum) {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------------------------- why us */
+
+.why-us.section {
+  background: #fbf8f1;
+}
+
+.why-us_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 767.98px) {
+  .why-us_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1199.98px) {
+  .why-us_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.why-us_card {
+  padding: 30px 26px;
+  background: #fff;
+  border: 1px solid rgba(175, 129, 37, .25);
+  border-radius: 3px;
+  transition: .3s ease-in-out;
+}
+
+.why-us_card:hover {
+  border-color: rgba(175, 129, 37, .7);
+  box-shadow: 0 14px 30px rgba(47, 62, 46, .1);
+  transform: translateY(-4px);
+}
+
+.why-us_card-num {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .12em;
+  color: #af8125;
+}
+
+.why-us_card-title {
+  margin: 0 0 12px;
+  font-size: 19px;
+  line-height: 1.35;
+  color: #2f3e2e;
+}
+
+.why-us_card .text {
+  margin: 0;
+  color: #5c5c5c;
+}
+
+/* The closing "What We Stand For" card is the philosophy statement, so it
+   reads as the punctuation mark on the grid rather than one more feature. */
+.why-us_card--accent {
+  background: #2f3e2e;
+  border-color: #2f3e2e;
+}
+
+.why-us_card--accent .why-us_card-title {
+  color: #fff;
+}
+
+.why-us_card--accent .text {
+  color: rgba(255, 255, 255, .82);
+}
+
+.why-us_card--accent .why-us_card-num {
+  color: #d9b25c;
+}
+
+/* ----------------------------------------------------------------- header */
+
+/* The desktop nav links are #fff, but they overlay the cream hero (#eadcc6)
+   — that measures 1.35:1, so Home/Menu/Shop/Contact were all but invisible.
+   Keeping them white means giving them something dark to sit on, so the bar
+   gets a scrim that fades out below the links. The inner pages overlay busy
+   cover photos, where the same scrim does the same job.
+   1199.98px is where index.min.css swaps the burger for the inline nav. */
+@media screen and (min-width: 1199.98px) {
+  .header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(29, 38, 28, .78) 0%, rgba(29, 38, 28, .55) 45%, rgba(29, 38, 28, .18) 78%, rgba(29, 38, 28, 0) 100%);
+    pointer-events: none;
+    transition: opacity .5s ease-in-out;
+  }
+
+  .header > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* contacts/menu/error.min.css give .header_nav a #2f3e2e colour that the
+     links inherit, so on the inner pages they were dark on a dark cover.
+     One white value for every page, scrim underneath doing the work. */
+  .header_nav .nav-link {
+    color: #fff;
+  }
+
+  /* menu.min.css paints the current/hovered link #2f3e2e, which was fine on
+     bare cream but disappears into the scrim — gold reads on both. */
+  .header_nav .nav-link.current,
+  .header_nav .nav-link:focus,
+  .header_nav .nav-link:hover,
+  .header_nav .nav-item.current,
+  .header_nav .nav-item:focus,
+  .header_nav .nav-item:hover {
+    color: #d9b25c;
+  }
+
+  /* The sticky bar paints itself cream, so the scrim is dropped there and the
+     links flip to the dark green that reads against it. */
+  .header.sticky::before {
+    opacity: 0;
+  }
+
+  .header.sticky .header_nav .nav-link {
+    color: #2f3e2e;
+  }
+
+  .header.sticky .header_nav .nav-link.current,
+  .header.sticky .header_nav .nav-link:focus,
+  .header.sticky .header_nav .nav-link:hover {
+    color: #af8125;
+  }
+
+  .header.sticky .header_nav-socials .link .icon {
+    color: #2f3e2e;
+  }
+}
+
+/* ----------------------------------------------------------- testimonials */
+
+/* index.min.css gives the band a generous bottom padding that leaves a wide
+   empty gap under the slider arrows. */
+@media screen and (min-width: 767.98px) {
+  .testimonials .main {
+    padding-bottom: 60px;
+  }
+
+  .testimonials_header {
+    margin-bottom: 30px;
+  }
+}
+
+/* The photo is a 4:5 portrait, so at 50% column width its natural aspect was
+   stretching the whole section to 900px tall. Taking the picture out of flow
+   lets the quote set the height and the photo crop to whatever that is.
+   1199.98px is where index.min.css switches this band to two columns. */
+@media screen and (min-width: 1199.98px) {
+  .testimonials .media {
+    position: relative;
+  }
+
+  .testimonials .media picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .testimonials .media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* --------------------------------------------------------------- contacts */
+
+.info_main-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.info_main-note {
+  margin: 14px 0 0;
+  max-width: 460px;
+  line-height: 1.6;
+  color: #8a8a8a;
+}
+
+/* ----------------------------------------------------------------- footer */
+
+.footer_about-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 18px;
+}
+
+.footer_block-note {
+  margin: 12px 0 0;
+  max-width: 260px;
+  line-height: 1.6;
+  color: #8a8a8a;
+}
+
+/* The TikTok mark is inline SVG rather than an icomoon glyph, so it needs
+   the sizing and hover colour the .icon font classes get for free. */
+.header_nav-socials .link svg.icon,
+.footer_block-socials .link svg.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  transition: .3s ease-in-out;
+}

@@ -1,0 +1,46 @@
+/* How to Order — photo on each step card.
+   The image bleeds to the card edges and the numbered badge overlaps its
+   bottom, so the horizontal margin below mirrors the 30px side padding
+   .how-to-order_step already carries in index.min.css. */
+
+.how-to-order_step {
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.how-to-order_step-media {
+  margin: 0 -30px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.how-to-order_step-media picture {
+  display: block;
+  height: 100%;
+}
+
+.how-to-order_step-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+.how-to-order_step:hover .how-to-order_step-media img {
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  transform: scale(1.06);
+}
+
+.how-to-order_step-num {
+  position: relative;
+  z-index: 1;
+  margin-top: -34px;
+  border: 4px solid #fff;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
