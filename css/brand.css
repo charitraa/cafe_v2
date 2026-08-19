@@ -5,30 +5,58 @@
 
 /* ---------------------------------------------------------------- founder */
 
-/* Sits directly below the hero at the client's request, so it opens on a
-   cream ground that separates it from the slider above without adding
-   another full-width photo. */
+/* Runs straight after the cream Why Choose Us grid, so it takes a soft sage
+   tint from the brand green family: enough to break the two sections apart
+   without adding another full-width photo. */
 .founder.section {
-  background: #fbf8f1;
+  background: #eef1e8;
 }
 
-.founder_grid {
-  display: grid;
-  gap: 40px;
-  align-items: start;
+/* The heading and the opening line sit above the wrap, sharing its measure,
+   so the note reads like a letter with a masthead rather than an h2 crammed
+   into a column beside the portrait. */
+.founder_header {
+  max-width: 980px;
+  margin-bottom: 18px;
 }
 
-@media screen and (min-width: 991.98px) {
-  .founder_grid {
-    grid-template-columns: minmax(280px, 380px) 1fr;
-    gap: 60px;
+.founder_lead {
+  max-width: 760px;
+  margin: 0 0 46px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid rgba(175, 129, 37, .3);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.45;
+  color: #2f3e2e;
+}
+
+@media screen and (min-width: 767.98px) {
+  .founder_lead {
+    font-size: 30px;
   }
+}
 
-  /* The note is long; the portrait rides along with it rather than
-     stranding a tall column of whitespace beside the closing paragraphs. */
+/* Magazine wrap rather than two fixed columns: the portrait floats into the
+   left of the note, the opening paragraphs set beside it, and once the photo
+   ends the text closes up and runs the full width left to right. */
+.founder_grid {
+  display: flow-root;
+  max-width: 980px;
+}
+
+@media screen and (min-width: 767.98px) {
   .founder_media {
-    position: sticky;
-    top: 120px;
+    float: left;
+    width: 320px;
+    margin: 6px 40px 26px 0;
+  }
+}
+
+@media screen and (min-width: 1199.98px) {
+  .founder_media {
+    width: 360px;
+    margin-right: 48px;
   }
 }
 
@@ -46,10 +74,11 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 991.98px) {
+/* Below the float breakpoint the portrait is just a centred block again. */
+@media screen and (max-width: 767.98px) {
   .founder_media {
     max-width: 380px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
   }
 }
 
@@ -72,84 +101,105 @@
   color: #5c5c5c;
 }
 
-.founder_lead {
-  margin: 0 0 24px;
-  font-size: 22px;
-  line-height: 1.5;
-  color: #2f3e2e;
-}
-
-@media screen and (min-width: 767.98px) {
-  .founder_lead {
-    font-size: 26px;
-  }
-}
-
 .founder_body p {
-  margin: 0 0 18px;
-  font-size: 16px;
-  line-height: 1.75;
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 1.85;
   color: #5c5c5c;
 }
 
+/* The one line the whole note builds to, so it gets to interrupt the column
+   rather than sit in it: white card, gold rule, oversized quote mark. */
 .founder_quote {
-  margin: 28px 0;
-  padding: 22px 26px;
+  display: flow-root;
+  position: relative;
+  margin: 34px 0;
+  padding: 30px 30px 30px 34px;
   border-left: 3px solid #af8125;
+  border-radius: 0 4px 4px 0;
   background: #fff;
+  box-shadow: 0 12px 28px rgba(47, 62, 46, .07);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.6;
   color: #2f3e2e;
 }
 
+@media screen and (min-width: 767.98px) {
+  .founder_quote {
+    font-size: 21px;
+  }
+}
+
+.founder_quote::before {
+  content: "\201C";
+  position: absolute;
+  top: 4px;
+  right: 20px;
+  font-size: 80px;
+  line-height: 1;
+  color: rgba(175, 129, 37, .18);
+  pointer-events: none;
+}
+
+/* Four short declarations set as a 2x2 of cards: as a bullet list they
+   disappeared into the surrounding paragraphs. */
 .founder_creed {
-  margin: 24px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 30px 0;
   padding: 0;
   list-style: none;
 }
 
+@media screen and (min-width: 575.98px) {
+  .founder_creed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .founder_creed li {
   position: relative;
-  padding-left: 22px;
-  margin-bottom: 8px;
+  padding: 14px 16px 14px 36px;
+  border: 1px solid rgba(175, 129, 37, .25);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .6);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.4;
   color: #2f3e2e;
 }
 
 .founder_creed li::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: .65em;
+  left: 16px;
+  top: 1.35em;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #a3b18a;
 }
 
+/* Sign-off closes the letter: indented off the body and set apart by the
+   gold rule, with the name large enough to read as a signature. */
 .founder_sign {
-  margin-top: 30px;
-  padding-top: 24px;
+  display: flow-root;
+  margin-top: 36px;
+  padding-top: 26px;
   border-top: 1px dashed rgba(175, 129, 37, .45);
 }
 
 .founder_sign-name {
   margin: 0;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
   color: #2f3e2e;
 }
 
-.founder_sign-role {
-  margin: 4px 0 0;
-  font-size: 14px;
-  color: #5c5c5c;
-}
-
 .founder_sign-tagline {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: .08em;
