@@ -639,6 +639,35 @@
 
 /* ------------------------------------------------------------------ about */
 
+/* about.jpg is a square group shot of the whole team. index.min.css crops it
+   to a 400px band from 768px up, and on the widest layout stretches it to
+   whatever height the text column happens to be — both cut people out of
+   frame at the edges. The box takes the picture's own 1:1 shape instead, and
+   the image is fitted rather than covered so nothing is trimmed. */
+.about_media {
+  aspect-ratio: 1/1;
+  height: auto;
+}
+
+.about_media img,
+.about_main-wrapper_media img {
+  height: auto;
+  object-fit: contain;
+}
+
+/* At 1399.98px the media becomes a flex sibling of the text column, so it
+   would stretch past its square and crop again; centring it in the row keeps
+   the picture whole with the section's cream around it. */
+@media screen and (min-width: 1399.98px) {
+  .about_container {
+    align-items: center;
+  }
+
+  .about_media {
+    align-self: center;
+  }
+}
+
 .about_main-motto {
   margin: 24px 0 0;
   font-size: 18px;
@@ -691,52 +720,157 @@
 
 /* ----------------------------------------------------------------- why us */
 
+/* Eight claims that used to sit in a uniform 4x2 grid under a centred title,
+   each stamped 01-08 as though it were a sequence. Nothing about them is
+   ordered, so the numbers came off; what is true of each one is which part of
+   the café it belongs to, and that became the tag. The grid is now a mosaic:
+   the masthead holds the top-left cell, the product line gets a wide band
+   because it is the only claim with named evidence behind it, and the promise
+   closes the section on the brand green. */
 .why-us.section {
   background: #fbf8f1;
 }
 
-.why-us_grid {
+.why-us_mosaic {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 20px;
 }
 
 @media screen and (min-width: 767.98px) {
-  .why-us_grid {
+  .why-us_mosaic {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .why-us_intro,
+  .why-us_card--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Three columns, and the cards fall into place on their own: masthead down
+   the left for two rows, then Kitchen/Sourcing, Lab/Bar, the wide Shelf band
+   beside Craft, and Room beside the promise. */
+@media screen and (min-width: 1199.98px) {
+  .why-us_mosaic {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .why-us_intro {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .why-us_card--wide {
+    grid-column: span 2;
+  }
+}
+
+/* ---------------------------------------------------------- the masthead */
+
+/* Left-aligned and inside the grid rather than centred above it, which is
+   how the founder's note directly below opens: the two sections read as one
+   editorial run. */
+.why-us_intro {
+  align-self: start;
+  padding: 4px 30px 10px 0;
+}
+
+/* Beside two rows of cards the masthead has height to spare, so it sits
+   centred against them rather than leaving the quadrant empty underneath. */
+@media screen and (min-width: 1199.98px) {
+  .why-us_intro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+}
+
+.why-us_eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #8f6a1e;
+}
+
+.why-us_title {
+  margin: 0 0 18px;
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  color: #2f3e2e;
 }
 
 @media screen and (min-width: 1199.98px) {
-  .why-us_grid {
-    grid-template-columns: repeat(4, 1fr);
+  .why-us_title {
+    font-size: 40px;
   }
 }
 
-.why-us_card {
-  padding: 30px 26px;
-  background: #fff;
-  border: 1px solid rgba(175, 129, 37, .25);
-  border-radius: 3px;
-  transition: .3s ease-in-out;
+.why-us_intro-text {
+  margin: 0;
+  max-width: 620px;
+  color: #5c5c5c;
 }
 
-.why-us_card:hover {
-  border-color: rgba(175, 129, 37, .7);
-  box-shadow: 0 14px 30px rgba(47, 62, 46, .1);
+/* -------------------------------------------------------------- the cards */
+
+.why-us_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 26px 30px;
+  border: 1px solid rgba(175, 129, 37, .22);
+  border-radius: 4px;
+  background: #fff;
+  transition: transform .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.why-us_card:hover,
+.why-us_card:focus-within {
+  border-color: rgba(175, 129, 37, .55);
+  box-shadow: 0 16px 34px rgba(47, 62, 46, .1);
   transform: translateY(-4px);
 }
 
-.why-us_card-num {
+.why-us_tag {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #8f6a1e;
+}
+
+/* The one moving part in the section: the hairline under each tag fills with
+   gold from the left when the card is pointed at, the way a measure fills. */
+.why-us_rule {
+  position: relative;
   display: block;
-  margin-bottom: 14px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: .12em;
-  color: #af8125;
+  align-self: stretch;
+  height: 1px;
+  margin: 14px 0 20px;
+  background: rgba(47, 62, 46, .14);
+}
+
+.why-us_rule::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #af8125;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+}
+
+.why-us_card:hover .why-us_rule::after,
+.why-us_card:focus-within .why-us_rule::after {
+  transform: scaleX(1);
 }
 
 .why-us_card-title {
@@ -751,23 +885,108 @@
   color: #5c5c5c;
 }
 
-/* The closing "What We Stand For" card is the philosophy statement, so it
-   reads as the punctuation mark on the grid rather than one more feature. */
-.why-us_card--accent {
+/* The single named drink in the section, marked in the running line rather
+   than pulled out into a chip of its own. */
+.why-us_mark {
+  box-shadow: inset 0 -2px 0 rgba(175, 129, 37, .45);
+  color: #2f3e2e;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------- the shelf */
+
+/* The only claim that can name its own evidence, so it gets the width and
+   the products come out of the paragraph and onto the shelf as chips. */
+.why-us_card--shelf {
+  background: #eef1e8;
+  border-color: rgba(163, 177, 138, .8);
+}
+
+.why-us_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why-us_chips li {
+  padding: 8px 15px;
+  border: 1px solid rgba(175, 129, 37, .45);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, .75);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #2f3e2e;
+}
+
+@media screen and (max-width: 575.98px) {
+  .why-us_chips {
+    gap: 8px;
+  }
+
+  .why-us_chips li {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* ----------------------------------------------------------- the promise */
+
+/* The closing statement, so it leaves the cream the way the section's last
+   card always has. */
+.why-us_card--promise {
+  justify-content: center;
   background: #2f3e2e;
   border-color: #2f3e2e;
 }
 
-.why-us_card--accent .why-us_card-title {
+.why-us_card--promise .why-us_tag {
+  color: #d9b25c;
+}
+
+.why-us_card--promise .why-us_rule {
+  background: rgba(217, 178, 92, .3);
+}
+
+.why-us_card--promise .why-us_rule::after {
+  background: #d9b25c;
+}
+
+.why-us_card--promise .why-us_card-title {
   color: #fff;
 }
 
-.why-us_card--accent .text {
+.why-us_card--promise .text {
+  max-width: 640px;
   color: rgba(255, 255, 255, .82);
 }
 
-.why-us_card--accent .why-us_card-num {
-  color: #d9b25c;
+@media screen and (min-width: 767.98px) {
+  .why-us_card--promise .why-us_card-title {
+    font-size: 23px;
+  }
+
+  .why-us_card--promise .text {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .why-us_card,
+  .why-us_rule::after {
+    transition-duration: .01ms;
+  }
+
+  .why-us_card:hover,
+  .why-us_card:focus-within {
+    transform: none;
+  }
 }
 
 /* ----------------------------------------------------------------- header */
