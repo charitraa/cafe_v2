@@ -1352,3 +1352,23 @@ body.intro-popup-open {
     transform: none;
   }
 }
+
+/* ------------------------------------------------------- page banner */
+
+/* The menu, shop and contact pages opened on a full-bleed photo banner that
+   carried the page title, with a breadcrumb strip under it. All of it is
+   gone and those pages now start straight at their content.
+
+   .header is position:absolute over the top of the page, so the banner was
+   also what kept the first section clear of it. <main> takes that job:
+   .header .container is min-height 70px plus 10px of padding either side,
+   and from 1199.98px .header is a flat 130px. */
+.page-main {
+  padding-top: 96px;
+}
+
+@media screen and (min-width: 1199.98px) {
+  .page-main {
+    padding-top: 130px;
+  }
+}
