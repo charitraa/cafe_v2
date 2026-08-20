@@ -5,7 +5,7 @@
   const STORAGE_KEY = "cafertCart";
 
   const PRODUCTS = [
-    { id: "dryfruit-cashew", name: "Premium Kaju (Cashews)", price: 850, img: "img/index/dryfruit-cashew.jpg", desc: "Whole roasted cashews, lightly salted, 250g pack.", category: "Nuts" },
+    { id: "dryfruit-cashew", name: "Vital Energy Seeds", price: 850, img: "img/index/010.webp", desc: "Whole roasted cashews, lightly salted, 110g pack. Best For 6 months", category: "Nuts" },
     { id: "dryfruit-almond", name: "California Almonds", price: 480, img: "img/index/dryfruit-almond.jpg", desc: "Crunchy raw almonds, rich in protein, 250g pack.", category: "Nuts" },
     { id: "dryfruit-walnut", name: "Kashmiri Walnuts", price: 560, img: "img/index/dryfruit-walnut.jpg", desc: "Fresh shelled walnut halves, buttery and rich, 250g pack.", category: "Nuts" },
     { id: "dryfruit-pistachio", name: "Roasted Pistachios", price: 980, img: "img/index/dryfruit-pistachio.jpg", desc: "Lightly salted roasted pistachios, 250g pack.", category: "Nuts" },
