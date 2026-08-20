@@ -705,11 +705,33 @@
     padding: 28px 40px 0;
   }
 
+  /* The text column stacks section padding, the stats tiles and the gap
+     below them; the picture column is only as tall as a 3:2 photo plus its
+     note. Whatever the difference is, centring splits it into cream above
+     and below the picture, so the spacing here is kept tight. */
+
+  /* index.min.css caps the copy at 540px, sized for the narrower column it
+     had before, which leaves dead space down the right of the text. It takes
+     the column it is given. */
+  .about_main-wrapper .section_header {
+    max-width: 620px;
+  }
+
+  /* 130px top and bottom was set when this column was the whole right half.
+     Alongside the stats it is far more air than the section needs. */
+  .about_main .section_header {
+    padding: 70px 40px;
+  }
+
+  .about_main .counter_block {
+    padding: 34px 20px;
+  }
+
   /* index.min.css runs .about_main as a space-between column, which pins the
      stats to the very bottom of the row. Lifted clear of that edge so the row
      closes on the section's own background rather than on the tiles. */
   .counter {
-    margin-bottom: 150px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1124,6 +1146,28 @@
   .header.sticky .header_nav-socials .link .icon {
     color: #2f3e2e;
   }
+
+  /* Same reasoning for the inner pages, which now carry that cream bar from
+     the top of the page rather than only once stuck. The scrim was there to
+     darken a cover photo behind the links; there is no photo left, so it just
+     smeared a 200px dark fade down over the page. */
+  .header:not([data-page=home2])::before {
+    opacity: 0;
+  }
+
+  .header:not([data-page=home2]) .header_nav .nav-link {
+    color: #2f3e2e;
+  }
+
+  .header:not([data-page=home2]) .header_nav .nav-link.current,
+  .header:not([data-page=home2]) .header_nav .nav-link:focus,
+  .header:not([data-page=home2]) .header_nav .nav-link:hover {
+    color: #af8125;
+  }
+
+  .header:not([data-page=home2]) .header_nav-socials .link .icon {
+    color: #2f3e2e;
+  }
 }
 
 /* ----------------------------------------------------------- testimonials */
@@ -1367,8 +1411,27 @@ body.intro-popup-open {
   padding-top: 96px;
 }
 
+/* Menu, shop and contact have nothing behind the nav now, so menu.min.css and
+   contacts.min.css leave the bar transparent until a scroll adds .sticky and
+   with it the cream fill and a shorter bar — the header looked one way at
+   rest and another the moment you moved. It carries the sticky look from the
+   top of the page instead, and .sticky then changes nothing but pinning it.
+   data-page=home2 is index.html, whose header sits over the hero slider and
+   still wants to be transparent. */
+.header:not([data-page=home2]) {
+  background: #eadcc6;
+}
+
 @media screen and (min-width: 1199.98px) {
+
+  /* .header is 130px at rest and .header.sticky 100px. Matching the sticky
+     height keeps the bar from shrinking under you on the first scroll, and
+     .page-main clears the height the bar actually has. */
+  .header:not([data-page=home2]) {
+    height: 100px;
+  }
+
   .page-main {
-    padding-top: 130px;
+    padding-top: 100px;
   }
 }
