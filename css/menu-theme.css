@@ -11,7 +11,7 @@
 .menu.section::after {
   content: "";
   position: absolute;
-  width: 300px;
+  width: 200px;
   aspect-ratio: 420 / 1081;
   background: url("../img/menu/leaf-gold-big.webp") center/contain no-repeat;
   opacity: .85;
