@@ -639,13 +639,14 @@
 
 /* ------------------------------------------------------------------ about */
 
-/* about.jpg is a square group shot of the whole team. index.min.css crops it
-   to a 400px band from 768px up, and on the widest layout stretches it to
-   whatever height the text column happens to be — both cut people out of
-   frame at the edges. The box takes the picture's own 1:1 shape instead, and
-   the image is fitted rather than covered so nothing is trimmed. */
+/* about.jpg is a 3:2 group shot of the whole team lined up across the front
+   of the café. index.min.css crops it to a 400px band from 768px up, and on
+   the widest layout stretches it to whatever height the text column happens
+   to be — both cut the people at the ends of the row out of frame. The box
+   takes the picture's own 3:2 shape instead, and the image is fitted rather
+   than covered so nothing is trimmed. */
 .about_media {
-  aspect-ratio: 1/1;
+  aspect-ratio: 3/2;
   height: auto;
 }
 
@@ -655,16 +656,60 @@
   object-fit: contain;
 }
 
+/* The note under the photo. .about_side wraps the picture and the note into
+   one column so the flex row index.min.css builds at 1399.98px still has two
+   children; below that the wrapper is a plain block and they simply stack. */
+.about_note {
+  padding: 24px 20px 0;
+  color: #5c5c5c;
+}
+
+.about_note p {
+  margin: 0 0 12px;
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.about_note p:last-child {
+  margin-bottom: 0;
+}
+
 /* At 1399.98px the media becomes a flex sibling of the text column, so it
-   would stretch past its square and crop again; centring it in the row keeps
-   the picture whole with the section's cream around it. */
+   would stretch past its 3:2 frame and crop again; centring it in the row
+   keeps the picture whole with the section's cream around it. */
 @media screen and (min-width: 1399.98px) {
   .about_container {
     align-items: center;
   }
 
-  .about_media {
+  /* index.min.css splits the row 50/50. The picture carries the whole team,
+     so it takes a little more of the width — it grows rightwards into the
+     text column, which still has room for the copy and the stats row. */
+  .about_side {
     align-self: center;
+    width: 56%;
+  }
+
+  /* The 50% index.min.css gives it is now 50% of .about_side rather than of
+     the row, which would halve the picture; it takes the column instead. */
+  .about_media {
+    width: auto;
+  }
+
+  .about_main {
+    width: 44%;
+  }
+
+  .about_note {
+    padding: 28px 40px 0;
+  }
+
+  /* index.min.css runs .about_main as a space-between column, which pins the
+     stats to the very bottom of the row. Lifted clear of that edge so the row
+     closes on the section's own background rather than on the tiles. */
+  .counter {
+    margin-bottom: 150px;
   }
 }
 
@@ -716,6 +761,33 @@
 .counter_block.num span:not(.countNum) {
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* index.min.css centres each figure over its label. Ranged left instead, so
+   the four numbers line up on a common edge and read as a row of facts rather
+   than four separate tiles. The selectors carry .about_main to match the
+   specificity of the rules in index.min.css they override. */
+.about_main .counter_block {
+  text-align: left;
+}
+
+.about_main .counter_block.num .countNum {
+  justify-content: flex-start;
+}
+
+.about_main .counter_block.num span:not(.countNum) {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------- specials */
+
+/* The cards now serve webp with a jpg fallback, so the image sits inside a
+   <picture>. index.min.css sizes the photo with height:100% against the
+   card's 4:3 media box; the wrapper is inline by default and would sit
+   between the two, so it is made a block that fills the box. */
+.specials_card-media picture {
+  display: block;
+  height: 100%;
 }
 
 /* ----------------------------------------------------------------- why us */
@@ -1130,4 +1202,153 @@
   height: 1em;
   fill: currentColor;
   transition: .3s ease-in-out;
+}
+
+/* ----------------------------------------------------- opening popup */
+
+/* The brand statement that also runs in the .banner section, put in front of
+   the visitor the moment the home page opens. Sits above the float button
+   (z-index 1000000 in floatbutton.min.css), which is the highest layer on the
+   page. js/intro-popup.js toggles .is-open and the hidden attribute. */
+.intro-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.intro-popup[hidden] {
+  display: none;
+}
+
+.intro-popup.is-open {
+  opacity: 1;
+}
+
+.intro-popup_backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(29, 38, 28, .72);
+}
+
+/* Scroll is locked while the popup is up so the page behind stays put. */
+body.intro-popup-open {
+  overflow: hidden;
+}
+
+.intro-popup_dialog {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 44px 26px 40px;
+  text-align: center;
+  background: #eadcc6;
+  border-top: 4px solid #af8125;
+  box-shadow: 0 30px 60px rgba(29, 38, 28, .35);
+  transform: translateY(18px);
+  transition: transform .35s ease-in-out;
+}
+
+.intro-popup.is-open .intro-popup_dialog {
+  transform: translateY(0);
+}
+
+.intro-popup_close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 15px;
+  color: #2f3e2e;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.intro-popup_close:hover,
+.intro-popup_close:focus {
+  color: #af8125;
+}
+
+.intro-popup_logo {
+  width: 62px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+
+.intro-popup_eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #af8125;
+}
+
+.intro-popup_lead {
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #2f3e2e;
+}
+
+.intro-popup_footnote {
+  margin: 18px 0 0;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .04em;
+  color: #af8125;
+}
+
+.intro-popup_btn {
+  margin: 28px auto 0;
+  font-family: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 767.98px) {
+  .intro-popup_dialog {
+    padding: 54px 56px 48px;
+  }
+
+  .intro-popup_lead {
+    font-size: 21px;
+  }
+}
+
+/* The transitions are decorative; the popup still opens and closes without
+   them for anyone who has asked the OS to reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+
+  .intro-popup,
+  .intro-popup_dialog {
+    transition: none;
+  }
+
+  .intro-popup_dialog {
+    transform: none;
+  }
 }

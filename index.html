@@ -18,8 +18,8 @@
     content="A contemporary café and wellness kitchen in Kathmandu where nutrition meets indulgence &mdash; nourishing plates, specialty coffee, signature drinks and house-made wellness products.">
   <meta property=og:url content="https://swadgasm.com/">
   <meta property=og:image content="https://swadgasm.com/img/index/about.jpg">
-  <meta property=og:image:width content=1800>
-  <meta property=og:image:height content=1800>
+  <meta property=og:image:width content=1500>
+  <meta property=og:image:height content=1000>
   <meta property=og:locale content=en_US>
   <meta name=twitter:card content=summary_large_image>
   <meta name=twitter:title content="Swadgasm Lab &amp; Wellness Café | Wellness, Reimagined.">
@@ -75,6 +75,18 @@
 </head>
 
 <body>
+  <div class=intro-popup id=introPopup role=dialog aria-modal=true aria-labelledby=introPopupLead hidden>
+    <div class=intro-popup_backdrop data-intro-popup-close></div>
+    <div class=intro-popup_dialog><button class=intro-popup_close type=button aria-label="Close" data-intro-popup-close><i
+          class=icon-close aria-hidden=true></i></button><img class=intro-popup_logo src="img/logo.png" alt=""
+        width="67" height="76"><span class=intro-popup_eyebrow>Naturally Addictive.</span>
+      <p class=intro-popup_lead id=introPopupLead>Nepal has never tasted wellness quite like this &mdash; a
+        one-of-a-kind café experience bringing together nourishing food, Nepal-inspired flavours, specialty coffee,
+        signature drinks and our own line of wellness products.</p>
+      <p class=intro-popup_footnote>Born in Kathmandu. Inspired by Nepal. Crafted for the modern lifestyle.</p>
+      <button class="intro-popup_btn btn" type=button data-intro-popup-close>Explore the café</button>
+    </div>
+  </div>
   <header class=header data-page=home2 data-page-parent=home>
     <div class="container d-flex align-items-center justify-content-between flex-wrap flex-xl-nowrap"><a class="logo h3"
         href="index.html"><span class=logo_img><img src="img/logo.png" alt="Swadgasm Lab & Wellness Café logo"
@@ -180,12 +192,20 @@
     </section>
     <section class=about>
       <div class=about_container>
-        <div class=about_media>
-          <picture>
-            <source data-srcset=img/index/about.webp srcset=img/index/about.webp type=image/webp><img class=lazy
-              data-src=img/index/about.jpg src="img/index/about.jpg"
-              alt="The Swadgasm Lab & Wellness Café team in Baluwatar">
-          </picture>
+        <div class=about_side>
+          <div class=about_media>
+            <picture>
+              <source data-srcset=img/index/about.webp srcset=img/index/about.webp type=image/webp><img class=lazy
+                data-src=img/index/about.jpg src="img/index/about.jpg"
+                alt="The Swadgasm Lab &amp; Wellness Café team outside the Baluwatar café">
+            </picture>
+          </div>
+          <div class=about_note data-aos=fade-up>
+            <p>As Swadgasm Lab &amp; Wellness Café is a newly launched concept, we prefer not to use estimated or
+              inflated business statistics on the website.</p>
+            <p>Instead, we recommend using meaningful brand and menu numbers that accurately represent what we offer.
+            </p>
+          </div>
         </div>
         <div class=about_main>
           <div class="about_main-wrapper d-xl-flex align-items-center">
@@ -213,7 +233,7 @@
               <picture>
                 <source data-srcset=img/index/about.webp srcset=img/index/about.webp type=image/webp><img class=lazy
                   data-src=img/index/about.jpg src="img/index/about.jpg"
-                  alt="The Swadgasm Lab & Wellness Café team in Baluwatar">
+                  alt="The Swadgasm Lab &amp; Wellness Café team outside the Baluwatar café">
               </picture>
             </div>
           </div>
@@ -663,8 +683,13 @@
         </div>
         <div class=specials_grid>
           <div class=specials_card data-aos=fade-up><span class=specials_card-badge>Save Rs. 50</span>
-            <div class=specials_card-media><img class=lazy data-src=img/index/menu06.jpg src="img/index/menu06.jpg"
-                alt="Benedict &amp; Brew"></div>
+            <div class=specials_card-media>
+              <picture>
+                <source data-srcset=img/index/special01.webp srcset=img/index/special01.webp type=image/webp><img
+                  class=lazy data-src=img/index/special01.jpg src="img/index/special01.jpg"
+                  alt="Eggs Benedict on toast with a side salad and a cup of specialty coffee">
+              </picture>
+            </div>
             <div class=specials_card-body>
               <h3 class=specials_card-title>Benedict &amp; Brew</h3>
               <p class="specials_card-desc text text--md">Eggs Benedict + Your Choice Of Specialty Coffee</p>
@@ -675,8 +700,13 @@
             </div>
           </div>
           <div class=specials_card data-aos=fade-up data-aos-delay=50><span class=specials_card-badge>Save Rs. 50</span>
-            <div class=specials_card-media><img class=lazy data-src=img/index/menu14.jpg src="img/index/menu14.jpg"
-                alt="Glow Bowl &amp; Juice"></div>
+            <div class=specials_card-media>
+              <picture>
+                <source data-srcset=img/index/special02.webp srcset=img/index/special02.webp type=image/webp><img
+                  class=lazy data-src=img/index/special02.jpg src="img/index/special02.jpg"
+                  alt="A tropical glow bowl topped with mango, granola, banana and coconut">
+              </picture>
+            </div>
             <div class=specials_card-body>
               <h3 class=specials_card-title>Glow Bowl &amp; Juice</h3>
               <p class="specials_card-desc text text--md">Tropical Glow Bowl + Fresh Market Juice</p>
@@ -688,8 +718,13 @@
           </div>
           <div class=specials_card data-aos=fade-up data-aos-delay=100><span class=specials_card-badge>Save Rs.
               60</span>
-            <div class=specials_card-media><img class=lazy data-src=img/index/menu08.jpg src="img/index/menu08.jpg"
-                alt="Garden Toast &amp; Broccoli Combo"></div>
+            <div class=specials_card-media>
+              <picture>
+                <source data-srcset=img/index/special03.webp srcset=img/index/special03.webp type=image/webp><img
+                  class=lazy data-src=img/index/special03.jpg src="img/index/special03.jpg"
+                  alt="Sourdough toast with garlic saut&eacute;ed mushrooms, seasonal vegetables and dips">
+              </picture>
+            </div>
             <div class=specials_card-body>
               <h3 class=specials_card-title>Garden Toast &amp; Broccoli Combo</h3>
               <p class="specials_card-desc text text--md">Garlic Saut&eacute;ed Mushroom Toast + Timur Lime Roasted
@@ -1278,6 +1313,7 @@
       </div>
     </div>
   </footer>
+  <script src="js/intro-popup.js"></script>
   <script src="js/common.min.js"></script>
   <script src="js/map.min.js"></script>
   <script src="js/index.min.js"></script>
