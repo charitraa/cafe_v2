@@ -95,39 +95,108 @@
 }
 
 /* On wide screens the centered content leaves generous empty margins either
-   side — show the full leaf artwork there instead of the small clipped
-   corner accent used on the card itself. */
-@media screen and (min-width: 1700px) {
+   side — frame the menu with the full leaf artwork there, two sprigs down the
+   left margin and two down the right, instead of the small clipped corner
+   accent used on the card itself. Both sprigs in a column are the same size,
+   one under the other with a gap between them.
+
+   The container is 1170px wide and centred, so 50% - 725px puts a 130px sprig
+   in the margin with a 10px gap to the content. Below 1400px that margin is
+   too narrow to hold one, and the card keeps its corner accents. */
+@media screen and (min-width: 1399.98px) {
   .full-menu::before,
-  .full-menu::after {
+  .full-menu::after,
+  .full-menu > .container::before,
+  .full-menu > .container::after {
     content: "";
     position: absolute;
-    top: 480px;
-    width: 240px;
+    width: 130px;
     aspect-ratio: 420 / 1081;
     background: url("../img/menu/leaf-gold-big.webp") center/contain no-repeat;
-    opacity: .9;
+    opacity: .85;
     pointer-events: none;
+  }
+
+  /* Upper pair starts where the category photo ends — the photo sits at
+     628..945 down the page and the section starts at 130, so 815 puts the top
+     of the sprig level with the bottom of the image. The artwork has its stem
+     on the right, so the left-hand sprig is mirrored to keep both stems
+     against the outside edge. */
+  .full-menu::before,
+  .full-menu::after {
+    top: 815px;
     z-index: 0;
   }
 
   .full-menu::before {
-    left: 60px;
+    left: calc(50% - 725px);
+    transform: scaleX(-1);
   }
 
   .full-menu::after {
-    right: 60px;
+    right: calc(50% - 725px);
+  }
+
+  /* Lower pair, same sprig at the same size directly beneath the first.
+     Anchored to the container, which starts 130px into the section, so the
+     top is 685 (the pair above) + 335 (its height at 130px wide) + 45 of gap. */
+  .full-menu > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .full-menu > .container::before,
+  .full-menu > .container::after {
+    top: 1065px;
+    /* Behind the container's own text, which is not positioned. */
+    z-index: -1;
+  }
+
+  .full-menu > .container::before {
+    left: -140px;
     transform: scaleX(-1);
+  }
+
+  .full-menu > .container::after {
+    right: -140px;
   }
 
   .menu-showcase::before,
   .menu-showcase::after {
     display: none;
   }
+}
 
-  .full-menu > .container {
-    position: relative;
-    z-index: 1;
+/* Past ~1700px there is margin to spare, so the sprigs grow with it — and the
+   gap between the two follows the taller artwork down. */
+@media screen and (min-width: 1700px) {
+  .full-menu::before,
+  .full-menu::after,
+  .full-menu > .container::before,
+  .full-menu > .container::after {
+    width: 175px;
+  }
+
+  .full-menu::before {
+    left: calc(50% - 770px);
+  }
+
+  .full-menu::after {
+    right: calc(50% - 770px);
+  }
+
+  /* 685 + 450 (its height at 175px wide) + 45 of gap. */
+  .full-menu > .container::before,
+  .full-menu > .container::after {
+    top: 1180px;
+  }
+
+  .full-menu > .container::before {
+    left: -185px;
+  }
+
+  .full-menu > .container::after {
+    right: -185px;
   }
 }
 

@@ -7,9 +7,11 @@
   var popup = document.getElementById('introPopup');
   if (!popup) return;
 
-  /* Set to true to show the popup only once per browsing session instead of on
-     every page load. */
-  var ONCE_PER_SESSION = false;
+  /* Shown once per browsing session: dismissing it stores a flag in
+     sessionStorage, which the browser drops when the tab/window is closed. So a
+     reload or a jump to another page won't bring it back, but a fresh visit
+     will. */
+  var ONCE_PER_SESSION = true;
   var STORAGE_KEY = 'swadgasmIntroSeen';
 
   /* Long enough for the hero to paint behind the popup, short enough that it
@@ -45,10 +47,10 @@
     document.addEventListener('keydown', onKeydown);
     var close = popup.querySelector('.intro-popup_close');
     if (close) close.focus();
-    remember();
   }
 
   function close() {
+    remember();
     popup.classList.remove('is-open');
     document.body.classList.remove('intro-popup-open');
     document.removeEventListener('keydown', onKeydown);

@@ -1168,6 +1168,16 @@
   .header:not([data-page=home2]) .header_nav-socials .link .icon {
     color: #2f3e2e;
   }
+
+  /* index.min.css leaves .header_nav with 20px of side padding, so on the home
+     page the links start 20px in from the logo and the social icons stop 20px
+     short of the right edge. The inner pages only load menu/contacts.min.css,
+     which has no such padding, so their bar sat 20px out of step with home's.
+     One value for every page. */
+  .header_nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 /* ----------------------------------------------------------- testimonials */
@@ -1413,9 +1423,8 @@ body.intro-popup-open {
 
 /* Menu, shop and contact have nothing behind the nav now, so menu.min.css and
    contacts.min.css leave the bar transparent until a scroll adds .sticky and
-   with it the cream fill and a shorter bar — the header looked one way at
-   rest and another the moment you moved. It carries the sticky look from the
-   top of the page instead, and .sticky then changes nothing but pinning it.
+   the cream fill with it — nothing to read the links against at rest. It
+   carries that cream from the top of the page instead.
    data-page=home2 is index.html, whose header sits over the hero slider and
    still wants to be transparent. */
 .header:not([data-page=home2]) {
@@ -1424,14 +1433,11 @@ body.intro-popup-open {
 
 @media screen and (min-width: 1199.98px) {
 
-  /* .header is 130px at rest and .header.sticky 100px. Matching the sticky
-     height keeps the bar from shrinking under you on the first scroll, and
-     .page-main clears the height the bar actually has. */
-  .header:not([data-page=home2]) {
-    height: 100px;
-  }
-
+  /* The bar keeps the home page's geometry on every page: 130px at rest,
+     100px once .sticky pins it. The inner pages used to sit at a flat 100px,
+     which put the logo and links ~15px higher than on the home page.
+     .page-main clears the 130px the bar has at rest. */
   .page-main {
-    padding-top: 100px;
+    padding-top: 130px;
   }
 }
