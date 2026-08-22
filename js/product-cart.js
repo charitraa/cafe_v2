@@ -5,22 +5,110 @@
   const STORAGE_KEY = "cafertCart";
 
   const PRODUCTS = [
-    { id: "dryfruit-cashew", name: "Vital Energy Seeds", price: 850, img: "img/index/010.webp", desc: "Whole roasted cashews, lightly salted, 110g pack. Best For 6 months", category: "Nuts" },
-    { id: "dryfruit-almond", name: "California Almonds", price: 480, img: "img/index/dryfruit-almond.jpg", desc: "Crunchy raw almonds, rich in protein, 250g pack.", category: "Nuts" },
-    { id: "dryfruit-walnut", name: "Kashmiri Walnuts", price: 560, img: "img/index/dryfruit-walnut.jpg", desc: "Fresh shelled walnut halves, buttery and rich, 250g pack.", category: "Nuts" },
-    { id: "dryfruit-pistachio", name: "Roasted Pistachios", price: 980, img: "img/index/dryfruit-pistachio.jpg", desc: "Lightly salted roasted pistachios, 250g pack.", category: "Nuts" },
-    { id: "dryfruit-peanut", name: "Roasted Peanuts", price: 180, img: "img/index/dryfruit-peanut.jpg", desc: "Crunchy masala-roasted peanuts, 250g pack.", category: "Nuts" },
-    { id: "dryfruit-raisin", name: "Golden Raisins (Kismis)", price: 220, img: "img/index/dryfruit-raisin.jpg", desc: "Sweet seedless golden raisins, 250g pack.", category: "Dried Fruits" },
-    { id: "dryfruit-apricot", name: "Dried Apricots", price: 320, img: "img/index/dryfruit-apricot.jpg", desc: "Sun-dried apricots, naturally sweet and tangy, 250g pack.", category: "Dried Fruits" },
-    { id: "dryfruit-fig", name: "Dried Figs (Anjeer)", price: 420, img: "img/index/dryfruit-fig.jpg", desc: "Soft dried figs, rich in fiber, 250g pack.", category: "Dried Fruits" },
-    { id: "dryfruit-date", name: "Premium Dates (Khajur)", price: 280, img: "img/index/dryfruit-date.jpg", desc: "Soft, naturally sweet dried dates, 250g pack.", category: "Dried Fruits" },
-    { id: "dryfruit-mulberry", name: "Dried Mulberries", price: 350, img: "img/index/dryfruit-mulberry.jpg", desc: "Naturally sweet dried mulberries, 200g pack.", category: "Dried Fruits" },
-    { id: "dryfruit-trailmix", name: "Himalayan Trail Mix", price: 380, img: "img/index/dryfruit-trailmix.jpg", desc: "Almonds, cashews, raisins and dried berries blended together, 300g pack.", category: "Mixes & Trail" },
-    { id: "dryfruit-berrynut", name: "Berry & Nut Mix", price: 340, img: "img/index/dryfruit-berrynut.jpg", desc: "Cranberries, pistachios, walnuts and almonds, 250g pack.", category: "Mixes & Trail" },
-    { id: "dryfruit-pumpkinseed", name: "Roasted Pumpkin Seeds", price: 260, img: "img/index/dryfruit-pumpkinseed.jpg", desc: "Crunchy roasted pumpkin seeds, rich in minerals, 200g pack.", category: "Seeds & Extras" }
+    {
+      id: "signature-coffee",
+      name: "Nuwakot Washed Coffee",
+      price: 1100,
+      img: "img/products/signature-coffee-thumb.jpg",
+      full: "img/products/signature-coffee.jpg",
+      desc: "Single-origin washed beans from Nuwakot, Nepal. 250g resealable bag.",
+      category: "Coffee",
+      specs: [
+        ["Net weight", "250 g"],
+        ["Origin", "Nuwakot, Nepal"],
+        ["Altitude", "1,000-1,200 m.a.s.l."],
+        ["Process", "Washed"],
+        ["Tasting notes", "Lemongrass, caramel, molasses"],
+        ["Brew", "French Press"]
+      ]
+    },
+    {
+      id: "vital-energy-seeds",
+      name: "Vital Energy Seeds",
+      price: 289,
+      img: "img/products/vital-energy-seeds-thumb.jpg",
+      full: "img/products/vital-energy-seeds.jpg",
+      desc: "House-roasted seed blend, seasoned and sealed in a glass jar. 110g.",
+      category: "Seeds & Nuts",
+      specs: [
+        ["Net weight", "110 g"],
+        ["Packaged for", "21st July"],
+        ["Best before", "6 months"]
+      ]
+    },
+    {
+      id: "ember-reserve-nuts",
+      name: "Ember Reserve Nuts",
+      price: 350,
+      img: "img/products/ember-reserve-nuts-thumb.jpg",
+      full: "img/products/ember-reserve-nuts.jpg",
+      desc: "Slow-roasted premium nuts in a corked glass tube. 50g.",
+      category: "Seeds & Nuts",
+      specs: [
+        ["Net weight", "50 g"],
+        ["Packaged for", "22nd July"],
+        ["Best before", "6 months"]
+      ]
+    },
+    {
+      id: "cocoa-pulse-balls-jar",
+      name: "Cocoa Pulse Balls - Jar",
+      price: 239,
+      img: "img/products/cocoa-pulse-balls-jar-thumb.jpg",
+      full: "img/products/cocoa-pulse-balls-jar.jpg",
+      desc: "Dark cocoa and pulse energy balls in a sealed glass jar. 120gm.",
+      category: "Bites & Balls",
+      specs: [
+        ["Net weight", "120 gm"],
+        ["Mfg date", "10th August"],
+        ["Best before", "21 days"]
+      ]
+    },
+    {
+      id: "cocoa-pulse-balls-tube",
+      name: "Cocoa Pulse Balls - Tube",
+      price: 139,
+      img: "img/products/cocoa-pulse-balls-tube-thumb.jpg",
+      full: "img/products/cocoa-pulse-balls-tube.jpg",
+      desc: "The same cocoa pulse balls in a corked glass tube - easy to gift. 120gm.",
+      category: "Bites & Balls",
+      specs: [
+        ["Net weight", "120 gm"],
+        ["Mfg date", "10th August"],
+        ["Best before", "21 days"]
+      ]
+    },
+    {
+      id: "house-made-granola",
+      name: "House-Made Granola",
+      price: 250,
+      img: "img/products/house-made-granola-thumb.jpg",
+      full: "img/products/house-made-granola.jpg",
+      desc: "Oven-baked granola made in our kitchen, in a resealable kraft pouch. 150g.",
+      category: "Granola & Snacks",
+      specs: [
+        ["Net weight", "150 g"],
+        ["Mfg date", "13th July"],
+        ["Best before", "60 days from Mfg"],
+        ["Batch no.", "001"]
+      ]
+    },
+    {
+      id: "silk-roast-makhana",
+      name: "Silk Roast Makhana",
+      price: 225,
+      img: "img/products/silk-roast-makhana-thumb.jpg",
+      full: "img/products/silk-roast-makhana.jpg",
+      desc: "Crisp roasted fox nuts tossed with herbs and sesame, in a glass bottle.",
+      category: "Granola & Snacks",
+      specs: [
+        ["Mfg date", "11th August"],
+        ["Best before", "45 days"]
+      ]
+    }
   ];
 
-  const CATEGORIES = ["All", "Nuts", "Dried Fruits", "Mixes & Trail", "Seeds & Extras"];
+  const CATEGORIES = ["All", "Coffee", "Seeds & Nuts", "Bites & Balls", "Granola & Snacks"];
 
   const productById = Object.fromEntries(PRODUCTS.map((p) => [p.id, p]));
 
@@ -71,6 +159,11 @@
   const checkoutStatus = document.getElementById("checkoutStatus");
   const checkoutSubmit = document.getElementById("checkoutSubmit");
 
+  const productOverlay = document.getElementById("productOverlay");
+  const productModal = document.getElementById("productModal");
+  const productModalClose = document.getElementById("productModalClose");
+  const productModalBody = document.getElementById("productModalBody");
+
   function renderFilters() {
     productFilters.innerHTML = CATEGORIES.map((cat) => `
       <button type="button" class="product_filter${cat === activeCategory ? " is-active" : ""}" data-category="${cat}">${cat}</button>
@@ -80,9 +173,12 @@
   function renderProducts() {
     const items = activeCategory === "All" ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCategory);
     productGrid.innerHTML = items.map((p, i) => `
-      <div class="product_card" style="animation-delay:${(i % 8) * 0.06}s">
+      <div class="product_card" data-id="${p.id}" role="button" tabindex="0" aria-label="View ${p.name}" style="animation-delay:${(i % 8) * 0.06}s">
         <span class="product_card-tag">${p.category}</span>
-        <div class="product_card-media"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="product_card-media">
+          <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+          <span class="product_card-view">View product</span>
+        </div>
         <div class="product_card-body">
           <div class="product_card-name">${p.name}</div>
           <p class="product_card-desc">${p.desc}</p>
@@ -177,6 +273,43 @@
     cartDrawer.classList.remove("is-open");
     cartDrawer.setAttribute("aria-hidden", "true");
     if (!checkoutModal.classList.contains("is-open")) lockScroll(false);
+  }
+
+  function openProductModal(id) {
+    const p = productById[id];
+    if (!p) return;
+
+    const specs = (p.specs || [])
+      .map(([label, value]) => `<li><span>${label}</span><span>${value}</span></li>`)
+      .join("");
+
+    productModalBody.innerHTML = `
+      <div class="product_modal-media">
+        <img src="${p.full || p.img}" alt="${p.name}">
+      </div>
+      <div class="product_modal-info">
+        <span class="product_modal-tag">${p.category}</span>
+        <h3 class="product_modal-name">${p.name}</h3>
+        <p class="product_modal-desc">${p.desc}</p>
+        ${specs ? `<ul class="product_modal-specs">${specs}</ul>` : ""}
+        <div class="product_modal-footer">
+          <span class="product_modal-price">${formatPrice(p.price)}</span>
+          <button type="button" class="product_card-add" data-id="${p.id}">Add to Cart</button>
+        </div>
+      </div>
+    `;
+
+    productOverlay.classList.add("is-open");
+    productModal.classList.add("is-open");
+    productModal.setAttribute("aria-hidden", "false");
+    lockScroll(true);
+  }
+
+  function closeProductModal() {
+    productOverlay.classList.remove("is-open");
+    productModal.classList.remove("is-open");
+    productModal.setAttribute("aria-hidden", "true");
+    if (!cartDrawer.classList.contains("is-open") && !checkoutModal.classList.contains("is-open")) lockScroll(false);
   }
 
   function openCheckout() {
@@ -280,8 +413,29 @@
 
     productGrid.addEventListener("click", (e) => {
       const btn = e.target.closest(".product_card-add");
+      if (btn) {
+        addToCart(btn.dataset.id, btn);
+        return;
+      }
+      const card = e.target.closest(".product_card");
+      if (card) openProductModal(card.dataset.id);
+    });
+
+    productGrid.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const card = e.target.closest(".product_card");
+      if (!card) return;
+      e.preventDefault();
+      openProductModal(card.dataset.id);
+    });
+
+    productModalBody.addEventListener("click", (e) => {
+      const btn = e.target.closest(".product_card-add");
       if (btn) addToCart(btn.dataset.id, btn);
     });
+
+    productModalClose.addEventListener("click", closeProductModal);
+    productOverlay.addEventListener("click", closeProductModal);
 
     cartItemsEl.addEventListener("click", (e) => {
       const minus = e.target.closest(".cart_qty-minus");
@@ -304,7 +458,8 @@
 
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
-      if (checkoutModal.classList.contains("is-open")) closeCheckout();
+      if (productModal.classList.contains("is-open")) closeProductModal();
+      else if (checkoutModal.classList.contains("is-open")) closeCheckout();
       else if (cartDrawer.classList.contains("is-open")) closeCart();
     });
   });

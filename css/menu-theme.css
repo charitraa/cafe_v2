@@ -7,11 +7,14 @@
   overflow: hidden;
 }
 
+/* One leaf each side, both sitting on the vertical centre line of the section. */
 .menu.section::before,
 .menu.section::after {
   content: "";
   position: absolute;
-  width: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
   aspect-ratio: 420 / 1081;
   background: url("../img/menu/leaf-gold-big.webp") center/contain no-repeat;
   opacity: .85;
@@ -20,14 +23,12 @@
 }
 
 .menu.section::before {
-  top: -20px;
-  right: 20px;
+  right: 0;
 }
 
 .menu.section::after {
-  bottom: -20px;
-  left: 20px;
-  transform: scaleX(-1);
+  left: 0;
+  transform: translateY(-50%) scaleX(-1);
 }
 
 .menu.section > .container {
@@ -35,25 +36,45 @@
   z-index: 1;
 }
 
+/* Keep the whole "Special Menu" block on one centre line: heading, intro copy
+   and the CTA below the list. */
+.menu.section .section_header.centered {
+  text-align: center;
+  align-items: center;
+}
+
+.menu.section .section_header-text {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .menu-showcase_cta {
   margin-top: 40px;
   text-align: center;
 }
 
+/* .btn is a block-level flex box, so text-align alone does not centre it. */
+.menu-showcase_cta .btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media screen and (max-width: 991.98px) {
+  /* Less side margin here, so keep the flower whole but smaller and fainter -
+     it reads as a watermark behind the list rather than a collision. */
   .menu.section::before,
   .menu.section::after {
-    width: 130px;
+    width: 95px;
+    opacity: .5;
   }
 
   .menu.section::before {
-    top: -20px;
-    right: -60px;
+    right: 0;
   }
 
   .menu.section::after {
-    bottom: -20px;
-    left: -60px;
+    left: 0;
   }
 }
 
